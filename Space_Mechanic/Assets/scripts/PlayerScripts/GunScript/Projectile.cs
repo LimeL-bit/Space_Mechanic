@@ -8,17 +8,13 @@ public class Projectile : MonoBehaviour
     [SerializeField] int bulletSpeed;
     [SerializeField] int bulletSpred;
     [SerializeField] bool SemiToggle;
+    [SerializeField] float bulletLifetime;
 
-    private float bulletSpredMax;
-    private float bulletSpredMin;
     private float angle;
 
     Rigidbody2D rbBullet;
     void Start()
     {
-        bulletSpredMax = bulletSpred;
-        bulletSpredMin = -bulletSpred;
-
         rbBullet = bullet.GetComponent<Rigidbody2D>();
     }
 
@@ -31,10 +27,11 @@ public class Projectile : MonoBehaviour
             {
                 for (int i = 0; i < bulletAmmount; i++)
                 {
-                    angle = Random.Range(bulletSpredMin, bulletSpredMax);
+                    angle = Random.Range(bulletSpred, -bulletSpred);
                     GameObject b = Instantiate(bullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
                     Rigidbody2D rbd = b.GetComponent<Rigidbody2D>();
                     rbd.linearVelocity = b.transform.up * bulletSpeed;
+                    Destroy(b, bulletLifetime);
                 }
             }
         }else if(SemiToggle == false)
@@ -43,10 +40,11 @@ public class Projectile : MonoBehaviour
             {
                 for (int i = 0; i < bulletAmmount; i++)
                 {
-                    angle = Random.Range(bulletSpredMin, bulletSpredMax);
+                    angle = Random.Range(bulletSpred, -bulletSpred);
                     GameObject b = Instantiate(bullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
                     Rigidbody2D rbd = b.GetComponent<Rigidbody2D>();
                     rbd.linearVelocity = b.transform.up * bulletSpeed;
+                    Destroy(b, bulletLifetime);
                 }
             }
         }

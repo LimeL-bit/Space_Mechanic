@@ -154,6 +154,7 @@ MonoBehaviour:
   bulletSpeed: 10
   bulletSpred: 10
   SemiToggle: 0
+  bulletLifetime: 1
 --- !u!212 &324211850
 SpriteRenderer:
   serializedVersion: 2
