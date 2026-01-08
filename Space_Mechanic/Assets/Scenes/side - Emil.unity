@@ -150,9 +150,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   bullet: {fileID: 6976797546403140940, guid: 5b02b6537ed22484c9b8503ac85582f5, type: 3}
-  bulletAmmount: 0
+  bulletAmmount: 3
   bulletSpeed: 10
   bulletSpred: 10
+  SemiToggle: 0
 --- !u!212 &324211850
 SpriteRenderer:
   serializedVersion: 2
