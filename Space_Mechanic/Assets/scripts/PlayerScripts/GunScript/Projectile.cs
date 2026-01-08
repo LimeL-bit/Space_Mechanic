@@ -35,8 +35,8 @@ public class Projectile : MonoBehaviour
                     rbd.linearVelocity = b.transform.up * bulletSpeed;
 
                     GameObject bc = Instantiate(bulletCartage, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
-                    Rigidbody2D rbdc = b.GetComponent<Rigidbody2D>();
-                    rbdc.linearVelocity = b.transform.right * -bulletSpeed/5;
+                    Rigidbody2D rbdc = bc.GetComponent<Rigidbody2D>();
+                    rbdc.linearVelocity = bc.transform.right * -bulletSpeed/5;
 
                     Destroy(b, bulletLifetime);
                     Destroy(bc, bulletLifetime * 2);
@@ -54,8 +54,8 @@ public class Projectile : MonoBehaviour
                     rbd.linearVelocity = b.transform.up * bulletSpeed;
 
                     GameObject bc = Instantiate(bulletCartage, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
-                    Rigidbody2D rbdc = b.GetComponent<Rigidbody2D>();
-                    rbdc.linearVelocity = b.transform.right * -bulletSpeed / 5;
+                    Rigidbody2D rbdc = bc.GetComponent<Rigidbody2D>();
+                    rbdc.linearVelocity = bc.transform.right * -bulletSpeed / 5;
 
                     Destroy(b, bulletLifetime);
                     Destroy(bc, bulletLifetime * 2);
