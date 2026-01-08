@@ -1,12 +1,19 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float jumpPower;
+    [SerializeField] float climbSpeed;
+    [SerializeField] float gravity;
+
+    private bool canJump = true;
+    private bool canClimbLadder = false;
+    private bool isClimbing = false;
 
     private float xDirection = 0;
-    private float yDirection = 0;
+    private float yDirection;
     
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -15,14 +22,23 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        rb.gravityScale = gravity;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //checks if your climbing
+        if (!isClimbing)
+        {
+            rb.gravityScale = gravity;
+        }
         xDirection = 0;
-        yDirection = 0;
+        yDirection = rb.linearVelocity.y;
+        
         PlayerInput();
+        Climb();
 
         rb.linearVelocity = new Vector2(xDirection, yDirection);
     }
@@ -43,9 +59,80 @@ public class PlayerMovement : MonoBehaviour
             xDirection = -speed;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        //jump
+        if (Input.GetKeyDown(KeyCode.Space) && canJump && !isClimbing)
         {
             yDirection = jumpPower;
+        }
+    }
+
+    private void Climb()
+    {
+        //the code wont work if canClimb is true
+        if (!canClimbLadder)
+        {
+            return;
+        }
+
+        if (isClimbing)
+        {
+            rb.gravityScale = 0;
+        }
+
+        //climb up
+        if (Input.GetKey(KeyCode.W))
+        {
+            yDirection = climbSpeed;
+            isClimbing = true;
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            yDirection = 0;
+        }
+        
+
+        //climb down
+        if (Input.GetKey(KeyCode.S))
+        {
+            yDirection = -climbSpeed;
+            isClimbing = true;
+        }
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            yDirection = 0;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 6)
+        {
+            canJump = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            canJump = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+        {
+            canClimbLadder = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+        {
+            canClimbLadder = false;
+            isClimbing = false;
         }
     }
 }
