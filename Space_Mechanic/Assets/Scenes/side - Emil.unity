@@ -151,6 +151,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   isPlayer: 1
   showGun: 1
+  fireRate: 0.1
+  relodeSpeed: 3
+  magSize: 20
+  SemiToggle: 0
   bullet: {fileID: 6976797546403140940, guid: 5b02b6537ed22484c9b8503ac85582f5, type: 3}
   bulletCartage: {fileID: 6976797546403140940, guid: 20f44b0004b60b448adf01a406369c24, type: 3}
   bulletAmmount: 1
@@ -158,8 +162,7 @@ MonoBehaviour:
   bulletCartrageSpeed: 3
   bulletSpred: 3
   bulletLifetime: 1
-  SemiToggle: 0
-  gudDistansFromPlayer: 1
+  gunDistansFromPlayer: 1
 --- !u!212 &324211850
 SpriteRenderer:
   serializedVersion: 2
@@ -228,9 +231,9 @@ Transform:
   m_GameObject: {fileID: 324211848}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0.576, y: -0.034, z: 0}
+  m_LocalPosition: {x: 1.22, y: 0.03, z: 0}
   m_LocalScale: {x: 0.075432494, y: 0.32331252, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1031595024}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -385,7 +388,7 @@ GameObject:
   - component: {fileID: 1031595022}
   - component: {fileID: 1031595021}
   - component: {fileID: 1031595020}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
