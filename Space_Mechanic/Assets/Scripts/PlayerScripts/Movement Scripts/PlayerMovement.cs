@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canJump = true;
     private bool canClimbLadder = false;
     private bool isClimbing = false;
+    public AudioSource jumpSound;
 
     private float xDirection = 0;
     private float yDirection;
@@ -63,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && canJump && !isClimbing)
         {
             yDirection = jumpPower;
+            jumpSound.Play();
         }
     }
 
