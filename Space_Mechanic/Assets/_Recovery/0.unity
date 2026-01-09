@@ -149,17 +149,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07950b40150487347b00a0b22242caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  isPlayer: 1
-  showGun: 1
   bullet: {fileID: 6976797546403140940, guid: 5b02b6537ed22484c9b8503ac85582f5, type: 3}
   bulletCartage: {fileID: 6976797546403140940, guid: 20f44b0004b60b448adf01a406369c24, type: 3}
-  bulletAmmount: 1
-  bulletSpeed: 20
-  bulletCartrageSpeed: 3
-  bulletSpred: 3
+  bulletAmmount: 3
+  bulletSpeed: 10
+  bulletSpred: 10
   bulletLifetime: 1
   SemiToggle: 0
-  gudDistansFromPlayer: 1
 --- !u!212 &324211850
 SpriteRenderer:
   serializedVersion: 2
@@ -209,7 +205,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2937979809708502338, guid: 3dcc5e72adcaf2145be78cc565760a53, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 1, g: 0.44247478, b: 0.4009434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -227,13 +223,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324211848}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0.576, y: -0.034, z: 0}
-  m_LocalScale: {x: 0.075432494, y: 0.32331252, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
+  m_LocalPosition: {x: 0.554, y: 0.024, z: 0}
+  m_LocalScale: {x: 0.4642, y: 1.0346, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1031595024}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!1 &411330278
 GameObject:
   m_ObjectHideFlags: 0
