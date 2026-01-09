@@ -3,6 +3,7 @@ using TMPro; // Needed for TextMeshPro
 
 public class PlayerHealth : MonoBehaviour
 {
+    public AudioSource takeDamageSound;
     [Header("Health Settings")]
     public int maxHealth = 100;
     public int currentHealth;
@@ -21,6 +22,8 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         UpdateHealthUI();
+        takeDamageSound.Play();
+        
         Debug.Log("Player took damage: " + amount + " | Health: " + currentHealth);
         if (currentHealth <= 0)
         {
