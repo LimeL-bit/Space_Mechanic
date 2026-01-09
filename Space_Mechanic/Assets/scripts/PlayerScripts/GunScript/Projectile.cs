@@ -92,26 +92,23 @@ public class Projectile : MonoBehaviour
     {
         if(isPlayer == true)
         {
-            // Get mouse direction
             Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 dir = mouse - transform.position;
 
-            // Get angle in degrees
             gunAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
-            // Rotate the gun
-            transform.rotation = Quaternion.Euler(0, 0, gunAngle - 90); // adjust -90 if sprite points up
+            transform.rotation = Quaternion.Euler(0, 0, gunAngle - 90);
 
-            // Flip the gun sprite if aiming left
             normalisedAngle = (gunAngle + 360) % 360;
+            Vector3 localScale = transform.localScale;
 
-            if (normalisedAngle > 180) // left side
-                transform.localScale = new Vector3(1, -1, 1);
+            if (normalisedAngle > 90 && normalisedAngle < 270)
+                localScale.y = -Mathf.Abs(localScale.y);
             else
-                transform.localScale = new Vector3(1, 1, 1);
+                localScale.y = Mathf.Abs(localScale.y);
 
+            transform.localScale = localScale;
 
-            // Offset from player
             transform.localPosition = new Vector3(gudDistansFromPlayer, 0, 0);
         }
     }
