@@ -18,6 +18,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] float bulletLifetime;
     [SerializeField] bool SemiToggle;
     private float angle;
+    private bool gunIsFliped;
 
     [Header("Gun placment config")]
     [SerializeField] float gudDistansFromPlayer;
@@ -35,13 +36,18 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         faceGun();
-        gun();
+        gunColdown();
 
-        if(showGun == true){
+        if (showGun == true){
                 gameObject.SetActive(true);
         } else if(showGun == false){
                 gameObject.SetActive(false);
         }    
+    }
+
+    void gunColdown()
+    {
+        gun();
     }
 
     void gun()
@@ -59,9 +65,16 @@ public class Projectile : MonoBehaviour
 
                     GameObject bc = Instantiate(bulletCartage, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
                     Rigidbody2D rbdc = bc.GetComponent<Rigidbody2D>();
-                    rbdc.linearVelocity = bc.transform.right * -bulletCartrageSpeed;
+                    if(gunIsFliped == false){
+                        rbdc.linearVelocity = bc.transform.right * -bulletCartrageSpeed;
+                    }
+                    else
+                    {
+                        rbdc.linearVelocity = bc.transform.right * bulletCartrageSpeed;
+                    }
 
-                    Destroy(b, bulletLifetime);
+
+                        Destroy(b, bulletLifetime);
                     Destroy(bc, bulletLifetime * 2);
                 }
             }
@@ -79,7 +92,14 @@ public class Projectile : MonoBehaviour
 
                     GameObject bc = Instantiate(bulletCartage, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
                     Rigidbody2D rbdc = bc.GetComponent<Rigidbody2D>();
-                    rbdc.linearVelocity = bc.transform.right * -bulletCartrageSpeed;
+                    if (gunIsFliped == false)
+                    {
+                        rbdc.linearVelocity = bc.transform.right * -bulletCartrageSpeed;
+                    }
+                    else
+                    {
+                        rbdc.linearVelocity = bc.transform.right * bulletCartrageSpeed;
+                    }
 
                     Destroy(b, bulletLifetime);
                     Destroy(bc, bulletLifetime * 2);
@@ -103,9 +123,18 @@ public class Projectile : MonoBehaviour
             Vector3 localScale = transform.localScale;
 
             if (normalisedAngle > 90 && normalisedAngle < 270)
+            {
                 localScale.y = -Mathf.Abs(localScale.y);
+                gunIsFliped = true;
+            }
+
             else
+            {
                 localScale.y = Mathf.Abs(localScale.y);
+                gunIsFliped = false;
+            }
+                
+
 
             transform.localScale = localScale;
 
