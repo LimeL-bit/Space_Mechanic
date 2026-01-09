@@ -1,37 +1,56 @@
 using UnityEngine;
+using TMPro; // Needed for TextMeshPro
 
 public class PlayerHealth : MonoBehaviour
 {
+    public AudioSource takeDamageSound;
+    [Header("Health Settings")]
     public int maxHealth = 100;
     public int currentHealth;
 
+    [Header("UI")]
+    public TMP_Text healthText; // Assign in Inspector
     private bool isDead = false;
-
     void Start()
     {
         currentHealth = maxHealth;
+        UpdateHealthUI();
     }
-
     public void TakeDamage(int amount)
     {
         if (isDead) return;
-
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
+        UpdateHealthUI();
+        takeDamageSound.Play();
+        
         Debug.Log("Player took damage: " + amount + " | Health: " + currentHealth);
-
         if (currentHealth <= 0)
         {
             Die();
         }
     }
+    public void Heal(int amount)
+    {
+        if (isDead) return;
 
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        UpdateHealthUI();
+
+        Debug.Log("Player healed: " + amount + " | Health: " + currentHealth);
+    }
     void Die()
     {
         isDead = true;
-        Debug.Log("Player died.");
-        // Add death logic here (disable movement, restart level, etc.)
+        Debug.Log("Player has died.");
+    }
+    void UpdateHealthUI()
+    {
+        if (healthText != null)
+        {
+            healthText.text = "Health: " + currentHealth;
+        }
     }
 }
 
