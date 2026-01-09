@@ -452,6 +452,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraZoom
   cam: {fileID: 1483941860}
+  speed: 2
+  zoomTime: 3
 --- !u!1 &1823769460
 GameObject:
   m_ObjectHideFlags: 0
