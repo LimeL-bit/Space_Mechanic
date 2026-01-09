@@ -12,16 +12,18 @@ public class Projectile : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject bulletCartage;
     [SerializeField] int bulletAmmount;
+    [SerializeField] float fireRate = 0.5f;
     [SerializeField] int bulletSpeed;
     [SerializeField] int bulletCartrageSpeed;
     [SerializeField] int bulletSpred;
     [SerializeField] float bulletLifetime;
     [SerializeField] bool SemiToggle;
+    private float fireCooldown = 0f;
     private float angle;
     private bool gunIsFliped;
 
     [Header("Gun placment config")]
-    [SerializeField] float gudDistansFromPlayer;
+    [SerializeField] float gunDistansFromPlayer;
     private float gunAngle;
     private float normalisedAngle;
     Rigidbody2D rbBullet;
@@ -47,7 +49,19 @@ public class Projectile : MonoBehaviour
 
     void gunColdown()
     {
-        gun();
+        if (fireCooldown > 0f)
+        {
+            fireCooldown -= Time.deltaTime;
+        }
+
+        if (fireCooldown <= 0f && SemiToggle == false)
+        {
+            gun();
+            fireCooldown = fireRate;
+        }else if(SemiToggle == true)
+        {
+            gun();
+        }
     }
 
     void gun()
@@ -138,7 +152,7 @@ public class Projectile : MonoBehaviour
 
             transform.localScale = localScale;
 
-            transform.localPosition = new Vector3(gudDistansFromPlayer, 0, 0);
+            transform.localPosition = new Vector3(gunDistansFromPlayer, 0, 0);
         }
     }
 }
