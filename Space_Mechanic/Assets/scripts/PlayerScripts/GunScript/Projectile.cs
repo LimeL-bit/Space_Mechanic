@@ -8,19 +8,26 @@ public class Projectile : MonoBehaviour
     [SerializeField] bool isPlayer;
     [SerializeField] bool showGun;
 
+    [Header("Gun config")]
+    [SerializeField] float fireRate;
+    [SerializeField] float relodeSpeed;
+    [SerializeField] int magSize;
+    [SerializeField] bool SemiToggle;
+    private float relodeCooldown = 0f;
+    [SerializeField] private bool isReloading = false;
+    private float fireCooldown = 0f;
+    private float angle;
+    private bool gunIsFliped;
+    [SerializeField] int currentMagSize;
+
     [Header("Bullet config")]
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject bulletCartage;
     [SerializeField] int bulletAmmount;
-    [SerializeField] float fireRate = 0.5f;
     [SerializeField] int bulletSpeed;
     [SerializeField] int bulletCartrageSpeed;
     [SerializeField] int bulletSpred;
     [SerializeField] float bulletLifetime;
-    [SerializeField] bool SemiToggle;
-    private float fireCooldown = 0f;
-    private float angle;
-    private bool gunIsFliped;
 
     [Header("Gun placment config")]
     [SerializeField] float gunDistansFromPlayer;
@@ -28,8 +35,11 @@ public class Projectile : MonoBehaviour
     private float normalisedAngle;
     Rigidbody2D rbBullet;
     Rigidbody2D rbBulletcartage;
+
     void Start()
     {
+        currentMagSize = magSize;
+
         rbBullet = bullet.GetComponent<Rigidbody2D>();
         rbBulletcartage = bulletCartage.GetComponent<Rigidbody2D>();
     }
@@ -37,17 +47,24 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        faceGun();
-        gunColdown();
+        FaceGun();
+        GunColdown();
+        Relode();
 
         if (showGun == true){
                 gameObject.SetActive(true);
         } else if(showGun == false){
                 gameObject.SetActive(false);
-        }    
+        }
+
+        if (Input.GetKeyDown(KeyCode.R) && isReloading == false && currentMagSize < magSize)
+        {
+            isReloading = true;
+            relodeCooldown = relodeSpeed;
+        }
     }
 
-    void gunColdown()
+    void GunColdown()
     {
         if (fireCooldown > 0f)
         {
@@ -56,73 +73,80 @@ public class Projectile : MonoBehaviour
 
         if (fireCooldown <= 0f && SemiToggle == false)
         {
-            gun();
+            Gun();
             fireCooldown = fireRate;
         }else if(SemiToggle == true)
         {
-            gun();
+            Gun();
         }
     }
 
-    void gun()
+    void Gun()
     {
-        if (SemiToggle == true)
+        if (currentMagSize > 0 && isReloading == false)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (SemiToggle == true)
             {
-                for (int i = 0; i < bulletAmmount; i++)
+                if (Input.GetMouseButtonDown(0))
                 {
-                    angle = Random.Range(bulletSpred, -bulletSpred);
-                    GameObject b = Instantiate(bullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
-                    Rigidbody2D rbd = b.GetComponent<Rigidbody2D>();
-                    rbd.linearVelocity = b.transform.up * bulletSpeed;
-
-                    GameObject bc = Instantiate(bulletCartage, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
-                    Rigidbody2D rbdc = bc.GetComponent<Rigidbody2D>();
-                    if(gunIsFliped == false){
-                        rbdc.linearVelocity = bc.transform.right * -bulletCartrageSpeed;
-                    }
-                    else
+                    for (int i = 0; i < bulletAmmount; i++)
                     {
-                        rbdc.linearVelocity = bc.transform.right * bulletCartrageSpeed;
-                    }
+                        angle = Random.Range(bulletSpred, -bulletSpred);
+                        GameObject b = Instantiate(bullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
+                        Rigidbody2D rbd = b.GetComponent<Rigidbody2D>();
+                        rbd.linearVelocity = b.transform.up * bulletSpeed;
 
+                        GameObject bc = Instantiate(bulletCartage, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
+                        Rigidbody2D rbdc = bc.GetComponent<Rigidbody2D>();
+                        if (gunIsFliped == false)
+                        {
+                            rbdc.linearVelocity = bc.transform.right * -bulletCartrageSpeed;
+                        }
+                        else
+                        {
+                            rbdc.linearVelocity = bc.transform.right * bulletCartrageSpeed;
+                        }
+
+                        currentMagSize--;
 
                         Destroy(b, bulletLifetime);
-                    Destroy(bc, bulletLifetime * 2);
+                        Destroy(bc, bulletLifetime * 2);
+                    }
                 }
             }
-        }
-        else if (SemiToggle == false)
-        {
-            if (Input.GetMouseButton(0))
+            else if (SemiToggle == false)
             {
-                for (int i = 0; i < bulletAmmount; i++)
+                if (Input.GetMouseButton(0))
                 {
-                    angle = Random.Range(bulletSpred, -bulletSpred);
-                    GameObject b = Instantiate(bullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
-                    Rigidbody2D rbd = b.GetComponent<Rigidbody2D>();
-                    rbd.linearVelocity = b.transform.up * bulletSpeed;
-
-                    GameObject bc = Instantiate(bulletCartage, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
-                    Rigidbody2D rbdc = bc.GetComponent<Rigidbody2D>();
-                    if (gunIsFliped == false)
+                    for (int i = 0; i < bulletAmmount; i++)
                     {
-                        rbdc.linearVelocity = bc.transform.right * -bulletCartrageSpeed;
-                    }
-                    else
-                    {
-                        rbdc.linearVelocity = bc.transform.right * bulletCartrageSpeed;
-                    }
+                        angle = Random.Range(bulletSpred, -bulletSpred);
+                        GameObject b = Instantiate(bullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
+                        Rigidbody2D rbd = b.GetComponent<Rigidbody2D>();
+                        rbd.linearVelocity = b.transform.up * bulletSpeed;
 
-                    Destroy(b, bulletLifetime);
-                    Destroy(bc, bulletLifetime * 2);
+                        GameObject bc = Instantiate(bulletCartage, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
+                        Rigidbody2D rbdc = bc.GetComponent<Rigidbody2D>();
+                        if (gunIsFliped == false)
+                        {
+                            rbdc.linearVelocity = bc.transform.right * -bulletCartrageSpeed;
+                        }
+                        else
+                        {
+                            rbdc.linearVelocity = bc.transform.right * bulletCartrageSpeed;
+                        }
+
+                        currentMagSize--;
+
+                        Destroy(b, bulletLifetime);
+                        Destroy(bc, bulletLifetime * 2);
+                    }
                 }
             }
         }
     }
 
-    void faceGun()
+    void FaceGun()
     {
         if(isPlayer == true)
         {
@@ -153,6 +177,26 @@ public class Projectile : MonoBehaviour
             transform.localScale = localScale;
 
             transform.localPosition = new Vector3(gunDistansFromPlayer, 0, 0);
+        }
+    }
+
+    void Relode()
+    {
+        if (currentMagSize <= 0 && isReloading == false)
+        {
+            isReloading = true;
+            relodeCooldown = relodeSpeed;
+        }
+
+        if (isReloading == true)
+        {
+            relodeCooldown -= Time.deltaTime;
+
+            if (relodeCooldown <= 0f)
+            {
+                currentMagSize = magSize;
+                isReloading = false;
+            }
         }
     }
 }

@@ -151,16 +151,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   isPlayer: 1
   showGun: 1
+  fireRate: 0.1
+  relodeSpeed: 3
+  magSize: 20
+  SemiToggle: 0
   bullet: {fileID: 6976797546403140940, guid: 5b02b6537ed22484c9b8503ac85582f5, type: 3}
   bulletCartage: {fileID: 6976797546403140940, guid: 20f44b0004b60b448adf01a406369c24, type: 3}
   bulletAmmount: 1
-  fireRate: 0.1
   bulletSpeed: 20
   bulletCartrageSpeed: 3
   bulletSpred: 3
   bulletLifetime: 1
-  SemiToggle: 0
-  gudDistansFromPlayer: 1
+  gunDistansFromPlayer: 1
 --- !u!212 &324211850
 SpriteRenderer:
   serializedVersion: 2
