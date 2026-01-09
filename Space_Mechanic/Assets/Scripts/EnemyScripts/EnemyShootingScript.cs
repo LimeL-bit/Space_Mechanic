@@ -3,9 +3,9 @@ using UnityEngine;
 public class EnemyShooting : MonoBehaviour
 {
     [Header("Settings")]
-    public bool canShoot = true; // Toggle this in the Inspector
+    public bool canShoot = true; 
     public GameObject projectilePrefab;
-    public Transform firePoint; // Create an empty child object where bullets spawn
+    public Transform firePoint; 
     [Header("Shooting Stats")]
     public float fireRate = 2f;
     private float nextFireTime;

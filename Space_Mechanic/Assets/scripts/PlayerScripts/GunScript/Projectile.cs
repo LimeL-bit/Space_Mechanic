@@ -1,17 +1,28 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.InputSystem.Controls.AxisControl;
 
 public class Projectile : MonoBehaviour
 {
+    [Header("General config")]
+    [SerializeField] bool isPlayer;
+    [SerializeField] bool showGun;
+
+    [Header("Bullet config")]
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject bulletCartage;
     [SerializeField] int bulletAmmount;
     [SerializeField] int bulletSpeed;
+    [SerializeField] int bulletCartrageSpeed;
     [SerializeField] int bulletSpred;
     [SerializeField] float bulletLifetime;
     [SerializeField] bool SemiToggle;
     private float angle;
 
+    [Header("Gun placment config")]
+    [SerializeField] float gudDistansFromPlayer;
+    private float gunAngle;
+    private float normalisedAngle;
     Rigidbody2D rbBullet;
     Rigidbody2D rbBulletcartage;
     void Start()
@@ -23,7 +34,19 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(SemiToggle == true)
+        faceGun();
+        gun();
+
+        if(showGun == true){
+                gameObject.SetActive(true);
+        } else if(showGun == false){
+                gameObject.SetActive(false);
+        }    
+    }
+
+    void gun()
+    {
+        if (SemiToggle == true)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -36,13 +59,14 @@ public class Projectile : MonoBehaviour
 
                     GameObject bc = Instantiate(bulletCartage, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
                     Rigidbody2D rbdc = bc.GetComponent<Rigidbody2D>();
-                    rbdc.linearVelocity = bc.transform.right * -bulletSpeed/5;
+                    rbdc.linearVelocity = bc.transform.right * -bulletCartrageSpeed;
 
                     Destroy(b, bulletLifetime);
                     Destroy(bc, bulletLifetime * 2);
                 }
             }
-        }else if(SemiToggle == false)
+        }
+        else if (SemiToggle == false)
         {
             if (Input.GetMouseButton(0))
             {
@@ -55,12 +79,37 @@ public class Projectile : MonoBehaviour
 
                     GameObject bc = Instantiate(bulletCartage, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
                     Rigidbody2D rbdc = bc.GetComponent<Rigidbody2D>();
-                    rbdc.linearVelocity = bc.transform.right * -bulletSpeed / 5;
+                    rbdc.linearVelocity = bc.transform.right * -bulletCartrageSpeed;
 
                     Destroy(b, bulletLifetime);
                     Destroy(bc, bulletLifetime * 2);
                 }
             }
+        }
+    }
+
+    void faceGun()
+    {
+        if(isPlayer == true)
+        {
+            Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 dir = mouse - transform.position;
+
+            gunAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+            transform.rotation = Quaternion.Euler(0, 0, gunAngle - 90);
+
+            normalisedAngle = (gunAngle + 360) % 360;
+            Vector3 localScale = transform.localScale;
+
+            if (normalisedAngle > 90 && normalisedAngle < 270)
+                localScale.y = -Mathf.Abs(localScale.y);
+            else
+                localScale.y = Mathf.Abs(localScale.y);
+
+            transform.localScale = localScale;
+
+            transform.localPosition = new Vector3(gudDistansFromPlayer, 0, 0);
         }
     }
 }
