@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
+    [HideInInspector] public bool isArmored = false;
+
     [Header("UI")]
     public TMP_Text healthText; // Assign in Inspector
     private bool isDead = false;
@@ -18,6 +20,11 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TakeDamage(int amount)
     {
+        if (isArmored)
+        {
+            amount = Mathf.RoundToInt(amount * 0.5f);
+        }
+
         if (isDead) return;
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
