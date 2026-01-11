@@ -1,10 +1,13 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using static UnityEngine.InputSystem.Controls.AxisControl;
 
 public class Projectile : MonoBehaviour
 {
     [Header("General config")]
+    [SerializeField] TextMeshProUGUI ammoCounter;
     [SerializeField] bool isPlayer;
     [SerializeField] bool showGun;
 
@@ -31,6 +34,7 @@ public class Projectile : MonoBehaviour
 
     [Header("Gun placment config")]
     [SerializeField] float gunDistansFromPlayer;
+    private float gunDistansFromPlayerPrivate;
     private float gunAngle;
     private float normalisedAngle;
     Rigidbody2D rbBullet;
@@ -62,6 +66,18 @@ public class Projectile : MonoBehaviour
             isReloading = true;
             relodeCooldown = relodeSpeed;
         }
+
+        if (isReloading == false)
+        {
+            ammoCounter.text = currentMagSize.ToString(); ;
+        }
+        else if (isReloading == true)
+        {
+            ammoCounter.text = currentMagSize + " Reloding...";
+
+        }
+
+
     }
 
     void GunColdown()
@@ -160,23 +176,24 @@ public class Projectile : MonoBehaviour
             normalisedAngle = (gunAngle + 360) % 360;
             Vector3 localScale = transform.localScale;
 
-            if (normalisedAngle > 90 && normalisedAngle < 270)
+            if (mouse.x < transform.parent.position.x)
             {
-                localScale.y = -Mathf.Abs(localScale.y);
+                localScale.x = -Mathf.Abs(localScale.x);
+                gunDistansFromPlayerPrivate = -gunDistansFromPlayer;
                 gunIsFliped = true;
             }
-
             else
             {
-                localScale.y = Mathf.Abs(localScale.y);
+                localScale.x = Mathf.Abs(localScale.x);
+                gunDistansFromPlayerPrivate = gunDistansFromPlayer;
                 gunIsFliped = false;
             }
-                
+
 
 
             transform.localScale = localScale;
 
-            transform.localPosition = new Vector3(gunDistansFromPlayer, 0, 0);
+            transform.localPosition = new Vector3(gunDistansFromPlayerPrivate, 0, 0);
         }
     }
 
