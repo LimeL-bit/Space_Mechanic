@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f0335889a8978459dc1b8a9c45ea53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  damageAmount: 25
+  damage: 25
 --- !u!61 &5104090234268375824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 3080
+    m_Bits: 7176
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
