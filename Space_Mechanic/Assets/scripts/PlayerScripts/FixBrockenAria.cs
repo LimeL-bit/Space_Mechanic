@@ -2,50 +2,26 @@ using UnityEngine;
 
 public class FixBrockenAria : MonoBehaviour
 {
-    //FA stands for Fixing Area
+    public bool inArea;
+    public MachenLogic machine;
 
-    private bool isCollidingWithFA;
-    private GameObject tempSavingOfFA;
-    [SerializeField] pickupTool pT;
-    public bool wantTpFix;
-
-    void Start()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        tempSavingOfFA = null;
-    }
-
-    void Update()
-    {
-        InteractWithFA();
-    }
-
-    void InteractWithFA()
-    {
-        if(pT.toolBeingHeald.name == tempSavingOfFA.gameObject.name && Input.GetKeyDown(KeyCode.F))
+        MachenLogic m = other.GetComponent<MachenLogic>();
+        if (m)
         {
-                wantTpFix = true;
+            machine = m;
+            inArea = true;
         }
     }
 
-    
-  
-    private void OnTriggerEnter2D(Collider2D othere)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (othere.CompareTag("FixAriea"))
+        MachenLogic m = other.GetComponent<MachenLogic>();
+        if (m && m == machine)
         {
-            Debug.Log("Enterd collision with " + othere.gameObject.name);
-            tempSavingOfFA = othere.gameObject;
-            isCollidingWithFA = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D othere)
-    {
-        if (othere.CompareTag("FixAriea"))
-        {
-            Debug.Log("Exited collision with " + othere.gameObject.name);
-            tempSavingOfFA = null;
-            isCollidingWithFA = false;
+            machine = null;
+            inArea = false;
         }
     }
 }

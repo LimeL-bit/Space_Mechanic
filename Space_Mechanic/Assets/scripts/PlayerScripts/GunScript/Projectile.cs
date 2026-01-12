@@ -124,6 +124,7 @@ public class Projectile : MonoBehaviour
                             rbdc.linearVelocity = bc.transform.right * bulletCartrageSpeed;
                         }
 
+                        ShootGun.Play();
                         currentMagSize--;
 
                         Destroy(b, bulletLifetime);
@@ -138,7 +139,6 @@ public class Projectile : MonoBehaviour
                     for (int i = 0; i < bulletAmmount; i++)
                     {
                         angle = Random.Range(bulletSpred, -bulletSpred);
-                        ShootGun.Play();
                         GameObject b = Instantiate(bullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
                         Rigidbody2D rbd = b.GetComponent<Rigidbody2D>();
                         rbd.linearVelocity = b.transform.up * bulletSpeed;
@@ -154,6 +154,7 @@ public class Projectile : MonoBehaviour
                             rbdc.linearVelocity = bc.transform.right * bulletCartrageSpeed;
                         }
 
+                        ShootGun.Play();
                         currentMagSize--;
 
                         Destroy(b, bulletLifetime);

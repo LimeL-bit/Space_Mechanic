@@ -4,7 +4,7 @@ using UnityEngine;
 public class pickupTool : MonoBehaviour
 {
     public bool isHoldingTool;
-    public GameObject toolBeingHeald;
+    public GameObject currentTool;
     private GameObject tempTool;
     private bool canHoldTool;
     [SerializeField] ShowOrHideGun ShowOrHideGun;
@@ -17,33 +17,30 @@ public class pickupTool : MonoBehaviour
 
     void Update()
     {
-        if(isHoldingTool == true)
+        if (isHoldingTool && currentTool != null)
         {
-            Debug.Log("you are holding " + toolBeingHeald.name);
-            toolBeingHeald.transform.position = transform.position;
+            currentTool.transform.position = transform.position;
         }
 
-        DropAndPickupp();
+        TryPickupOrDrop();
     }
-    void DropAndPickupp()
+
+    void TryPickupOrDrop()
     {
-        if (canHoldTool == true && isHoldingTool == false && Input.GetKeyDown(KeyCode.E) && ShowOrHideGun.showGun == false)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            toolBeingHeald = tempTool;
-
-            toolsRb = toolBeingHeald.GetComponent<Rigidbody2D>();
-            toolsRb.simulated = false;
-
-            isHoldingTool = true;
-            return;
-        }else if (Input.GetKeyDown(KeyCode.E) && isHoldingTool == true)
-        {
-            toolsRb.simulated = true;
-            toolsRb = null;
-
-            toolBeingHeald = null;
-            isHoldingTool = false;
-            return;
+            if (!isHoldingTool && tempTool != null)
+            {
+                currentTool = tempTool;
+                currentTool.GetComponent<Rigidbody2D>().simulated = false;
+                isHoldingTool = true;
+            }
+            else if (isHoldingTool)
+            {
+                currentTool.GetComponent<Rigidbody2D>().simulated = true;
+                currentTool = null;
+                isHoldingTool = false;
+            }
         }
     }
 

@@ -2,23 +2,54 @@ using UnityEngine;
 
 public class MachenLogic : MonoBehaviour
 {
+    [Header("General config")]
     public string toolToFix;
-    [SerializeField] FixBrockenAria fBA;
-    [SerializeField] pickupTool tool;
+    public bool isBroken = true;
 
-    public bool isBrocken;
+    [Header("scripts")]
+    [SerializeField] pickupTool player;
+    [SerializeField] FixBrockenAria area;
 
-    void Start()
+    [Header("sprites")]
+    [SerializeField] Sprite fixedMachen;
+    [SerializeField] Sprite brockenMachen;
+
+    private SpriteRenderer spriteRenderer;
+
+    private void Start()
     {
-        isBrocken = false;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        if(fBA.wantTpFix == true && tool.toolBeingHeald.name == toolToFix)
+        LogicForLooks();
+        logic();
+    }
+
+    void LogicForLooks()
+    {
+        if (isBroken)
         {
-            isBrocken = false;
-            fBA.wantTpFix = false;
+            spriteRenderer.sprite = brockenMachen;
+        }
+        else if(!isBroken)
+        {
+            spriteRenderer.sprite = fixedMachen;
+        }
+    }
+
+    void logic()
+    {
+        if (!isBroken) return;
+
+        if (area.inArea && player.isHoldingTool && Input.GetKeyDown(KeyCode.F))
+        {
+            if (player.currentTool.name == toolToFix)
+            {
+                isBroken = false;
+                Debug.Log("Machine Repaired!");
+            }
         }
     }
 }

@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 324211851}
   - component: {fileID: 324211850}
   - component: {fileID: 324211849}
+  - component: {fileID: 324211852}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -289,7 +290,7 @@ MonoBehaviour:
   ammoCounter: {fileID: 1644272869}
   isPlayer: 1
   showGun: 1
-  ShootGun: {fileID: 0}
+  ShootGun: {fileID: 324211852}
   fireRate: 0.1
   relodeSpeed: 3
   magSize: 20
@@ -378,6 +379,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1031595024}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!82 &324211852
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324211848}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 58a1d02bebadd3f46a2d17c73c9a6c6e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &411330278
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,9 +800,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MachenLogic
   toolToFix: wrench
-  fBA: {fileID: 1031595028}
-  tool: {fileID: 1031595027}
-  isBrocken: 0
+  isBroken: 1
+  player: {fileID: 1031595027}
+  area: {fileID: 1031595028}
+  fixedMachen: {fileID: -1988106242, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
+  brockenMachen: {fileID: 1981830058, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
 --- !u!61 &915962176
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1233,7 +1333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   isHoldingTool: 0
-  toolBeingHeald: {fileID: 0}
+  currentTool: {fileID: 0}
   ShowOrHideGun: {fileID: 1031595026}
 --- !u!114 &1031595028
 MonoBehaviour:
@@ -1247,8 +1347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b6d9212d7a71d49a253e27173cc35e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  pT: {fileID: 1031595027}
-  wantTpFix: 0
+  inArea: 0
+  machine: {fileID: 0}
 --- !u!1 &1161456251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1362,7 @@ GameObject:
   - component: {fileID: 1161456253}
   - component: {fileID: 1161456252}
   - component: {fileID: 1161456256}
+  - component: {fileID: 1161456257}
   m_Layer: 14
   m_Name: wrench
   m_TagString: Tool
@@ -1462,6 +1563,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1161456257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161456251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca6de83362b3be49a3e1942640e160f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  toolName: wrench
 --- !u!1 &1230822778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,6 +2009,7 @@ GameObject:
   - component: {fileID: 1410075445}
   - component: {fileID: 1410075444}
   - component: {fileID: 1410075443}
+  - component: {fileID: 1410075448}
   m_Layer: 14
   m_Name: screwDriver
   m_TagString: Tool
@@ -2095,6 +2210,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1410075448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410075442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca6de83362b3be49a3e1942640e160f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToolName
+  toolName: screwDriver
 --- !u!1 &1464987755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,9 +2255,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   toolToFix: hammer
-  fBA: {fileID: 1031595028}
-  tool: {fileID: 1031595027}
-  isBrocken: 0
+  isBroken: 1
+  player: {fileID: 1031595027}
+  area: {fileID: 1031595028}
+  fixedMachen: {fileID: 3207493857732141056, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
+  brockenMachen: {fileID: 262667845, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
 --- !u!61 &1464987757
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2435,6 +2565,7 @@ GameObject:
   - component: {fileID: 1607592114}
   - component: {fileID: 1607592113}
   - component: {fileID: 1607592117}
+  - component: {fileID: 1607592118}
   m_Layer: 14
   m_Name: hammer
   m_TagString: Tool
@@ -2635,6 +2766,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1607592118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607592112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca6de83362b3be49a3e1942640e160f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToolName
+  toolName: hammer
 --- !u!1 &1644272867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2989,9 +3133,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MachenLogic
   toolToFix: screwDriver
-  fBA: {fileID: 1031595028}
-  tool: {fileID: 1031595027}
-  isBrocken: 0
+  isBroken: 1
+  player: {fileID: 1031595027}
+  area: {fileID: 1031595028}
+  fixedMachen: {fileID: -1823617916, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
+  brockenMachen: {fileID: 267033468, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
 --- !u!61 &2059408755
 BoxCollider2D:
   m_ObjectHideFlags: 0
