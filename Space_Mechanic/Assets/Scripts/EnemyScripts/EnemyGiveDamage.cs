@@ -4,7 +4,8 @@ public class EnemyDamage : MonoBehaviour
 {
     [Header("Enemy Stats")]
     public int enemyMaxHealth = 100;
-    private int currentHealth; 
+    private int currentHealth;
+    public AudioSource DamageTaken;
     [Header("Damage to Player")]
     public int damage = 10;
     public float damageCooldown = 1f;
@@ -17,6 +18,7 @@ public class EnemyDamage : MonoBehaviour
     }
     public void TakeDamage(int amount)
     {
+        DamageTaken.Play();
         currentHealth -= amount;
         Debug.Log(gameObject.name + " took damage. Current health: " + currentHealth);
         if (currentHealth <= 0)

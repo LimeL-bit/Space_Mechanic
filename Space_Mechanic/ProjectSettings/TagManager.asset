@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - ExitShip
+  - Tool
+  - FixAriea
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - bullet cartrage
   - Exit Enter Hitbox
   - 
-  - 
+  - Tools
   - 
   - 
   - 

@@ -5,7 +5,6 @@ public class ShowOrHideGun : MonoBehaviour
     public bool showGun;
     [SerializeField] GameObject gun;
 
-
     void Start()
     {
         showGun = false;
@@ -26,11 +25,6 @@ public class ShowOrHideGun : MonoBehaviour
 
     void EquipUnequipGun()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            Debug.Log("pressed 1");
-        }
-
         if (Input.GetKeyDown(KeyCode.Alpha1) && showGun == true)
         {
             showGun = false;

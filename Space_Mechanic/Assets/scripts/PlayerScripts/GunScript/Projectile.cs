@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] TextMeshProUGUI ammoCounter;
     [SerializeField] bool isPlayer;
     [SerializeField] bool showGun;
+    public AudioSource ShootGun;
 
     [Header("Gun config")]
     [SerializeField] float fireRate;
@@ -73,7 +74,7 @@ public class Projectile : MonoBehaviour
         }
         else if (isReloading == true)
         {
-            ammoCounter.text = " Reloding...";
+            ammoCounter.text = "Reloding...";
 
         }
 
@@ -137,6 +138,7 @@ public class Projectile : MonoBehaviour
                     for (int i = 0; i < bulletAmmount; i++)
                     {
                         angle = Random.Range(bulletSpred, -bulletSpred);
+                        ShootGun.Play();
                         GameObject b = Instantiate(bullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, angle));
                         Rigidbody2D rbd = b.GetComponent<Rigidbody2D>();
                         rbd.linearVelocity = b.transform.up * bulletSpeed;
