@@ -73,7 +73,7 @@ public class Projectile : MonoBehaviour
         }
         else if (isReloading == true)
         {
-            ammoCounter.text = " Reloding...";
+            ammoCounter.text = "Reloding...";
 
         }
 
