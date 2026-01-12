@@ -43,15 +43,12 @@ public class Projectile : MonoBehaviour
 
     void Start()
     {
-        
-
         currentMagSize = magSize;
 
         rbBullet = bullet.GetComponent<Rigidbody2D>();
         rbBulletcartage = bulletCartage.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (showGun == true)
@@ -86,8 +83,6 @@ public class Projectile : MonoBehaviour
             }
         }
     }
-
-    
 
     void GunColdown()
     {

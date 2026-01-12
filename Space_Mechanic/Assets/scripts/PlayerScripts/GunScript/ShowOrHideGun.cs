@@ -3,6 +3,9 @@ using UnityEngine;
 public class ShowOrHideGun : MonoBehaviour
 {
     public bool showGun;
+    [SerializeField] GameObject gun;
+
+
     void Start()
     {
         showGun = false;
@@ -14,15 +17,20 @@ public class ShowOrHideGun : MonoBehaviour
 
         if(showGun == true)
         {
-            gameObject.SetActive(true);
+            gun.SetActive(true);
         }else if ( showGun == false)
         {
-            gameObject.SetActive(false);
+            gun.SetActive(false);
         }
     }
 
     void EquipUnequipGun()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            Debug.Log("pressed 1");
+        }
+
         if (Input.GetKeyDown(KeyCode.Alpha1) && showGun == true)
         {
             showGun = false;
