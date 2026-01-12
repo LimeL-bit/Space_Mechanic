@@ -5,7 +5,7 @@ public class pickupTool : MonoBehaviour
 {
     public bool isHoldingTool;
     public GameObject toolBeingHeald;
-    public GameObject tempTool;
+    private GameObject tempTool;
     private bool canHoldTool;
     [SerializeField] ShowOrHideGun ShowOrHideGun;
     Rigidbody2D toolsRb;
@@ -19,6 +19,7 @@ public class pickupTool : MonoBehaviour
     {
         if(isHoldingTool == true)
         {
+            Debug.Log("you are holding " + toolBeingHeald.name);
             toolBeingHeald.transform.position = transform.position;
         }
 

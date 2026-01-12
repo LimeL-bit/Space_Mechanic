@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ExitShip
   - Tool
+  - FixAriea
   layers:
   - Default
   - TransparentFX
