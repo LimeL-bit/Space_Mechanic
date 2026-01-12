@@ -5,15 +5,12 @@ public class EnemyDamage : MonoBehaviour
     [Header("Enemy Stats")]
     public int enemyMaxHealth = 100;
     private int currentHealth; 
-
     [Header("Damage to Player")]
     public int damage = 10;
     public float damageCooldown = 1f;
     private float lastDamageTime;
-
     [Header("Loot")]
     public GameObject scrapPrefab;
-
     private void Start()
     {
         currentHealth = enemyMaxHealth;
@@ -25,6 +22,7 @@ public class EnemyDamage : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            OnEnemyDeath();
         }
     }
     private void OnTriggerStay2D(Collider2D other)
@@ -42,15 +40,29 @@ public class EnemyDamage : MonoBehaviour
             }
         }
     }
-
     private void Die()
     {
+        if (FreezeFrame.Instance != null)
+        {
+            Debug.Log("FreezeFrame.Instance is NULL");
+            FreezeFrame.Instance.StopTime(0.05f);
+        }
+
         if (scrapPrefab != null)
         {
             Instantiate(scrapPrefab, transform.position, Quaternion.identity);
         }
-        Debug.Log(gameObject.name + " destroyed.");
         Destroy(gameObject);
+    }
+
+
+
+    public void OnEnemyDeath()
+    {
+        if (FreezeFrame.Instance != null)
+        {
+            FreezeFrame.Instance.StopTime(0.4f); 
+        }
     }
 }
 
