@@ -12,6 +12,9 @@ public class CameraZoom : MonoBehaviour
     private bool playerIsNearby = false;
     PlayerMovement PM;
 
+    [SerializeField] private float zoomCoolDown;
+    private float nextZoom;
+
     [SerializeField] private Vector3 cameraTargetPosition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -81,9 +84,10 @@ public class CameraZoom : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && Time.time > nextZoom)
         {
             timer = zoomTime;
+            nextZoom = Time.time + zoomCoolDown;
         }
     }
 
