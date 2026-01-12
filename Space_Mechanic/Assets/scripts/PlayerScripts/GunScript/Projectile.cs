@@ -69,11 +69,11 @@ public class Projectile : MonoBehaviour
 
         if (isReloading == false)
         {
-            ammoCounter.text = currentMagSize.ToString(); ;
+            ammoCounter.text = "Ammo Left: " + currentMagSize.ToString(); ;
         }
         else if (isReloading == true)
         {
-            ammoCounter.text = currentMagSize + " Reloding...";
+            ammoCounter.text = " Reloding...";
 
         }
 
