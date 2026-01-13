@@ -48,7 +48,6 @@ public class MachenLogic : MonoBehaviour
             if (player.currentTool.name == toolToFix)
             {
                 isBroken = false;
-                Debug.Log("Machine Repaired!");
             }
         }
     }

@@ -48,7 +48,6 @@ public class pickupTool : MonoBehaviour
     {
         if (othere.CompareTag("Tool") )
         {
-            Debug.Log("Enterd collision with " + othere.gameObject.name);
             tempTool = othere.gameObject;
             canHoldTool = true;
         }
@@ -58,7 +57,6 @@ public class pickupTool : MonoBehaviour
     {
         if (othere.CompareTag("Tool"))
         {
-            Debug.Log("Left collision with " + othere.gameObject.name);
             tempTool = null;
             canHoldTool = false;
         }
