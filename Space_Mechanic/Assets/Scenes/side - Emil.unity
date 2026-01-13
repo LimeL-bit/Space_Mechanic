@@ -780,7 +780,7 @@ GameObject:
   - component: {fileID: 915962177}
   - component: {fileID: 915962176}
   - component: {fileID: 915962175}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Engin
   m_TagString: FixAriea
   m_Icon: {fileID: 0}
@@ -1708,8 +1708,8 @@ Transform:
   m_GameObject: {fileID: 1230822778}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.08359, y: 2.9583, z: 0}
-  m_LocalScale: {x: 12.640249, y: 0.97931707, z: 1}
+  m_LocalPosition: {x: 1.7511, y: 2.9583, z: 0}
+  m_LocalScale: {x: 13.305127, y: 0.97931707, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1574428993}
@@ -1847,8 +1847,8 @@ Transform:
   m_GameObject: {fileID: 1324213420}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.95641, y: -0.6817, z: 0}
-  m_LocalScale: {x: 1.1698647, y: 3.8887308, z: 1}
+  m_LocalPosition: {x: -7.93, y: 2.9994, z: 0}
+  m_LocalScale: {x: 2.3890977, y: 0.96984947, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1574428993}
@@ -2235,7 +2235,7 @@ GameObject:
   - component: {fileID: 1464987758}
   - component: {fileID: 1464987757}
   - component: {fileID: 1464987756}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: wall
   m_TagString: FixAriea
   m_Icon: {fileID: 0}
@@ -2928,7 +2928,7 @@ GameObject:
   - component: {fileID: 1874607513}
   - component: {fileID: 1874607512}
   - component: {fileID: 1874607511}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2965,7 +2965,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -3077,7 +3077,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3095,8 +3095,8 @@ Transform:
   m_GameObject: {fileID: 1874607510}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.77641, y: -1.5716999, z: 0}
-  m_LocalScale: {x: 1.1698647, y: 2.294351, z: 1}
+  m_LocalPosition: {x: -5.78, y: 0.5351, z: 0}
+  m_LocalScale: {x: 1.1698647, y: 6.284457, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1574428993}
@@ -3113,7 +3113,7 @@ GameObject:
   - component: {fileID: 2059408756}
   - component: {fileID: 2059408755}
   - component: {fileID: 2059408754}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: pannel
   m_TagString: FixAriea
   m_Icon: {fileID: 0}
