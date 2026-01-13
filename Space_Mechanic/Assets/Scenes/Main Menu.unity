@@ -733,7 +733,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2018996929}
+      - m_Target: {fileID: 2018996931}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: GoToScene
         m_Mode: 1
@@ -783,15 +783,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545909886}
   m_CullTransparentMesh: 1
---- !u!114 &2018996929 stripped
+--- !u!114 &2018996931 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2342487632095866166, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7512586826890899442, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
   m_PrefabInstance: {fileID: 4134675421639300097}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe7ef511efb57a54a8caf635cee7ccc2, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dcfcaa53bc8f5d418c24f510ac0b15b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
 --- !u!1001 &4134675421639300097
