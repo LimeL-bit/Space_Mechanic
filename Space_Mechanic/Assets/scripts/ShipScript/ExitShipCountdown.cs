@@ -16,8 +16,6 @@ public class ExitShipCountdown : MonoBehaviour
     public int seconds;
     public int minits;
 
-
-
     void Start()
     {
         playerInZone = false;
