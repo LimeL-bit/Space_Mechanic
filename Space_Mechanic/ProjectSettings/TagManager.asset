@@ -47,5 +47,8 @@ TagManager:
   - name: Player
     uniqueID: 3428211669
     locked: 0
+  - name: Tool
+    uniqueID: 1359786857
+    locked: 0
   m_RenderingLayers:
   - Default
