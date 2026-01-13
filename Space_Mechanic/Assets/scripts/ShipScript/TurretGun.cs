@@ -7,6 +7,7 @@ public class TurretGun : MonoBehaviour
     private float gunAngle;
     private float normalisedAngle;
     private float angle;
+    private float fireCooldown;
 
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject bulletHole1;
@@ -15,6 +16,7 @@ public class TurretGun : MonoBehaviour
     [SerializeField] int bulletSpeed;
     [SerializeField] int bulletSpred;
     [SerializeField] float bulletLifetime;
+    [SerializeField] float fireRate;
 
     void Start()
     {
@@ -24,7 +26,21 @@ public class TurretGun : MonoBehaviour
     void Update()
     {
         FaceMouse();
-        Shot();
+        GunColdown();
+    }
+
+    void GunColdown()
+    {
+        if (fireCooldown > 0f)
+        {
+            fireCooldown -= Time.deltaTime;
+        }
+
+        if (fireCooldown <= 0f)
+        {
+            Shot();
+            fireCooldown = fireRate;
+        }
     }
 
     void Shot()

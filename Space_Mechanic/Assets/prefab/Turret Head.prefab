@@ -201,9 +201,10 @@ MonoBehaviour:
   bulletHole1: {fileID: 7533423901533628543}
   bulletHole2: {fileID: 5221616857091623296}
   bulletAmmount: 1
-  bulletSpeed: 100
+  bulletSpeed: 20
   bulletSpred: 1
-  bulletLifetime: 1
+  bulletLifetime: 3
+  fireRate: 1
 --- !u!1 &7533423901533628543
 GameObject:
   m_ObjectHideFlags: 0
