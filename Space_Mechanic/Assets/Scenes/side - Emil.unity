@@ -1051,6 +1051,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629549710}
   m_CullTransparentMesh: 1
+--- !u!95 &874157468 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2182172370513536204, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+  m_PrefabInstance: {fileID: 1910734720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &915962174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,6 +1089,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MachenLogic
   toolToFix: wrench
   isBroken: 1
+  timeBeforeDestruction: 15
+  gameOverScene: 
   player: {fileID: 1031595027}
   area: {fileID: 1031595028}
   fixedMachen: {fileID: -1988106242, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
@@ -2213,12 +2220,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea252794f1ecd94ab154764c7731b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  totalTimeBeforExitAvalebul: 300
-  sceneToMoveTo: side2 - Emil
+  totalTimeBeforExitAvalebul: 10
   timer: {fileID: 8651970}
   useTimer: 1
   seconds: 0
   minits: 5
+  transition: {fileID: 874157468}
+  transitionTime: 1
+  level: Main Menu
 --- !u!61 &1327568112
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2540,6 +2549,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   toolToFix: hammer
   isBroken: 1
+  timeBeforeDestruction: 15
+  gameOverScene: 
   player: {fileID: 1031595027}
   area: {fileID: 1031595028}
   fixedMachen: {fileID: 3207493857732141056, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
@@ -3338,6 +3349,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1574428993}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1910734720
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2342487632095866166, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342487632095866166, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: notForMainMenu
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553367192152660790, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.89321
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553367192152660790, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.40766
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553367192152660790, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553367192152660790, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553367192152660790, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553367192152660790, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553367192152660790, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553367192152660790, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553367192152660790, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553367192152660790, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7703989233153428266, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: m_Name
+      value: LevelLoader
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
 --- !u!1001 &1986383710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3428,6 +3504,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MachenLogic
   toolToFix: screwDriver
   isBroken: 1
+  timeBeforeDestruction: 15
+  gameOverScene: 
   player: {fileID: 1031595027}
   area: {fileID: 1031595028}
   fixedMachen: {fileID: -1823617916, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
@@ -3613,6 +3691,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1910734720}
   - {fileID: 1483941861}
   - {fileID: 1031595024}
   - {fileID: 967629203}
