@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] TextMeshProUGUI ammoCounter;
     [SerializeField] bool isPlayer;
     [SerializeField] bool showGun;
+    public bool showGunAdmin;
     public AudioSource ShootGun;
 
     [Header("Gun config")]
@@ -52,33 +53,37 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FaceGun();
-        GunColdown();
-        Relode();
+        if(showGunAdmin == true)
+        {
+            FaceGun();
+            GunColdown();
+            Relode();
 
-        if (showGun == true){
+            if (showGun == true)
+            {
                 gameObject.SetActive(true);
-        } else if(showGun == false){
+            }
+            else if (showGun == false)
+            {
                 gameObject.SetActive(false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.R) && isReloading == false && currentMagSize < magSize)
+            {
+                isReloading = true;
+                relodeCooldown = relodeSpeed;
+            }
+
+            if (isReloading == false)
+            {
+                ammoCounter.text = "Ammo Left: " + currentMagSize.ToString(); ;
+            }
+            else if (isReloading == true)
+            {
+                ammoCounter.text = "Reloding...";
+
+            }
         }
-
-        if (Input.GetKeyDown(KeyCode.R) && isReloading == false && currentMagSize < magSize)
-        {
-            isReloading = true;
-            relodeCooldown = relodeSpeed;
-        }
-
-        if (isReloading == false)
-        {
-            ammoCounter.text = "Ammo Left: " + currentMagSize.ToString(); ;
-        }
-        else if (isReloading == true)
-        {
-            ammoCounter.text = "Reloding...";
-
-        }
-
-
     }
 
     void GunColdown()
