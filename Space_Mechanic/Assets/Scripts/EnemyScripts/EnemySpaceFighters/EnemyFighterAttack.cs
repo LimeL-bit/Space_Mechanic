@@ -6,6 +6,7 @@ public class EnemyFighterAttack : MonoBehaviour
     [SerializeField] GameObject firingPart;
     [SerializeField] float bulletSpeed;
     [SerializeField] float fireRate = 1.5f;
+    [SerializeField] float despawnTime = 1;
 
     private float nextShootTime;
     
@@ -18,6 +19,7 @@ public class EnemyFighterAttack : MonoBehaviour
             GameObject bulletClone = Instantiate(bullet, firingPart.transform.position, Quaternion.Euler(0, 0, angle));
             
             bulletClone.GetComponent<Rigidbody2D>().linearVelocity = direction.normalized * bulletSpeed;
+            Destroy(bulletClone, despawnTime);
         }
     }
 }

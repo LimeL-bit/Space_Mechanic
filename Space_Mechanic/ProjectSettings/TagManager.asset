@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - ExitShip
-  - Tool
   - FixAriea
+  - Tool
+  - ExitShip
   layers:
   - Default
   - TransparentFX
@@ -17,13 +17,13 @@ TagManager:
   - Ground
   - Ladder
   - Loot
-  - 
+  - SpaceShipTrigger
   - bullet
   - bullet cartrage
-  - Exit Enter Hitbox
   - 
-  - Tools
-  - Machin
+  - Enemy
+  - 
+  - 
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3428211669
     locked: 0
   m_RenderingLayers:
   - Default
