@@ -10,7 +10,11 @@ public class Projectile : MonoBehaviour
     [SerializeField] TextMeshProUGUI ammoCounter;
     [SerializeField] bool isPlayer;
     [SerializeField] bool showGun;
+    public bool showGunAdmin;
     public AudioSource ShootGun;
+    public AudioSource ReloadGun;
+    [SerializeField] float soundRate = 0.05f;
+    float soundCooldown = 0f;
 
     [Header("Gun config")]
     [SerializeField] float fireRate;
@@ -52,33 +56,52 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FaceGun();
-        GunColdown();
-        Relode();
-
-        if (showGun == true){
+        if(showGunAdmin == true)
+        {
+            FaceGun();
+            GunColdown();
+            Relode();
+        
+            if (showGun == true)
+            {
                 gameObject.SetActive(true);
-        } else if(showGun == false){
+            }
+            else if (showGun == false)
+            {
                 gameObject.SetActive(false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.R) && isReloading == false && currentMagSize < magSize)
+            {
+                isReloading = true;
+                ReloadGun.Play();
+                relodeCooldown = relodeSpeed;
+            }
+
+            if (isReloading == false)
+            {
+                ammoCounter.text = "Ammo Left: " + currentMagSize.ToString(); ;
+            }
+            else if (isReloading == true)
+            {
+                ammoCounter.text = "Reloding...";
+
+            }
+            if (Input.GetMouseButton(0) && !isReloading && currentMagSize > 0)
+            {
+                soundCooldown -= Time.deltaTime;
+
+                if (soundCooldown <= 0f)
+                {
+                    ShootGun.PlayOneShot(ShootGun.clip);
+                    soundCooldown = soundRate;
+                }
+            }
+            else
+            {
+                soundCooldown = 0f;
+            }
         }
-
-        if (Input.GetKeyDown(KeyCode.R) && isReloading == false && currentMagSize < magSize)
-        {
-            isReloading = true;
-            relodeCooldown = relodeSpeed;
-        }
-
-        if (isReloading == false)
-        {
-            ammoCounter.text = "Ammo Left: " + currentMagSize.ToString(); ;
-        }
-        else if (isReloading == true)
-        {
-            ammoCounter.text = "Reloding...";
-
-        }
-
-
     }
 
     void GunColdown()
@@ -106,6 +129,7 @@ public class Projectile : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
+                    
                     for (int i = 0; i < bulletAmmount; i++)
                     {
                         angle = Random.Range(bulletSpred, -bulletSpred);
@@ -123,9 +147,8 @@ public class Projectile : MonoBehaviour
                         {
                             rbdc.linearVelocity = bc.transform.right * bulletCartrageSpeed;
                         }
-
-                        ShootGun.Play();
-                        currentMagSize--;
+             
+                            currentMagSize--;
 
                         Destroy(b, bulletLifetime);
                         Destroy(bc, bulletLifetime * 2);
@@ -153,8 +176,6 @@ public class Projectile : MonoBehaviour
                         {
                             rbdc.linearVelocity = bc.transform.right * bulletCartrageSpeed;
                         }
-
-                        ShootGun.Play();
                         currentMagSize--;
 
                         Destroy(b, bulletLifetime);
