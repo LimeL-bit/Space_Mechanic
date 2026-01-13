@@ -474,7 +474,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   toolToFix: hammer
-  isBroken: 1
+  isBroken: 0
+  timeBeforeDestruction: 15
+  gameOverScene: 
   player: {fileID: 1613967876}
   area: {fileID: 1613967875}
   fixedMachen: {fileID: 3207493857732141056, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
@@ -995,7 +997,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MachenLogic
   toolToFix: wrench
-  isBroken: 1
+  isBroken: 0
+  timeBeforeDestruction: 15
+  gameOverScene: 
   player: {fileID: 1613967876}
   area: {fileID: 1613967875}
   fixedMachen: {fileID: -1988106242, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
@@ -1307,6 +1311,7 @@ MonoBehaviour:
   - {fileID: 1245218138}
   - {fileID: 173771636}
   - {fileID: 483056041}
+  hasBrokenMachine: 0
 --- !u!1 &555528448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,13 +1929,14 @@ GameObject:
   - component: {fileID: 791396771}
   - component: {fileID: 791396770}
   - component: {fileID: 791396769}
+  - component: {fileID: 791396773}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &791396769
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2043,7 +2049,10 @@ MonoBehaviour:
   ammoCounter: {fileID: 1126657951}
   isPlayer: 1
   showGun: 1
+  showGunAdmin: 0
   ShootGun: {fileID: 791396769}
+  ReloadGun: {fileID: 791396773}
+  soundRate: 0.05
   fireRate: 0.1
   relodeSpeed: 3
   magSize: 20
@@ -2132,6 +2141,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1613967883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!82 &791396773
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791396768}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 721866d3c11391a408266e9250d97866, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &811664828
 GameObject:
   m_ObjectHideFlags: 0
@@ -3797,7 +3903,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MachenLogic
   toolToFix: screwDriver
-  isBroken: 1
+  isBroken: 0
+  timeBeforeDestruction: 15
+  gameOverScene: 
   player: {fileID: 1613967876}
   area: {fileID: 1613967875}
   fixedMachen: {fileID: -1823617916, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
@@ -4697,6 +4805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShowOrHideGun
   showGun: 0
   gun: {fileID: 791396768}
+  pJ: {fileID: 791396770}
 --- !u!82 &1613967878
 AudioSource:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class ShipHealth : MonoBehaviour
     [SerializeField] List<GameObject> machines = new List<GameObject>();
     private float health;
 
-    private bool hasBrokenMachine = false;
+    public bool hasBrokenMachine = false;
     private void Start()
     {
         health = maxHealth;
@@ -27,7 +27,6 @@ public class ShipHealth : MonoBehaviour
     {
         if(health <= 0 && !hasBrokenMachine)
         {
-            health = maxHealth;
             hasBrokenMachine = true;
 
             int randomNumber = Random.Range(0, machines.Count);
@@ -36,9 +35,16 @@ public class ShipHealth : MonoBehaviour
             {
                 if(randomNumber == index)
                 {
-                    print("Machine" + index + " is broken");
+                    machines[index].GetComponent<MachenLogic>().isBroken = true;
+                    print(machines[index].name + " is broken");
                 }
             }
         }
+    }
+
+    public void FixedMachine()
+    {
+        health = maxHealth;
+        hasBrokenMachine = false;
     }
 }
