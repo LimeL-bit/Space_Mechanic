@@ -1,13 +1,14 @@
+using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static System.TimeZoneInfo;
 
 public class ExitShipCountdown : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] float totalTimeBeforExitAvalebul;
-    [SerializeField] string sceneToMoveTo;
     [SerializeField] TextMeshProUGUI timer;
     [SerializeField] bool useTimer;
     private float currentTimeLeft;
@@ -15,6 +16,10 @@ public class ExitShipCountdown : MonoBehaviour
     private bool playerInZone;
     public int seconds;
     public int minits;
+
+    public Animator transition;
+    public float transitionTime = 1f;
+    [SerializeField] private string level;
 
     void Start()
     {
@@ -67,13 +72,26 @@ public class ExitShipCountdown : MonoBehaviour
         {
             if (timeEnded == true && useTimer == true)
             {
-                SceneManager.LoadScene(sceneToMoveTo);
+                GoToScene();
             }
             else if (useTimer == false)
             {
-                SceneManager.LoadScene(sceneToMoveTo);
+                GoToScene();
             }
         }
+    }
+    public void GoToScene()
+    {
+        StartCoroutine(LoadLevel());
+    }
+
+    IEnumerator LoadLevel()
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(level);
     }
 
     private void OnTriggerEnter2D(Collider2D othere)

@@ -254,6 +254,7 @@ MonoBehaviour:
   firingPart: {fileID: 1521978576941147742}
   bulletSpeed: 80
   fireRate: 0.2
+  despawnTime: 1
 --- !u!114 &-8060626565137388567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce28d7b20378e07409585016943c47e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFighterHealth
-  health: 100
+  health: 1000
+  crashDamage: 5
 --- !u!1 &1521978576941147742
 GameObject:
   m_ObjectHideFlags: 0

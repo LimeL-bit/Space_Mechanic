@@ -204,6 +204,7 @@ MonoBehaviour:
   bulletSpeed: 20
   bulletSpred: 1
   bulletLifetime: 3
+  fireRate: 1
 --- !u!1 &7533423901533628543
 GameObject:
   m_ObjectHideFlags: 0
