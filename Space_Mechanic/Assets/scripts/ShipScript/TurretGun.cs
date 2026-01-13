@@ -6,6 +6,15 @@ public class TurretGun : MonoBehaviour
     private bool gunIsFliped;
     private float gunAngle;
     private float normalisedAngle;
+    private float angle;
+
+    [SerializeField] GameObject bullet;
+    [SerializeField] GameObject bulletHole1;
+    [SerializeField] GameObject bulletHole2;
+    [SerializeField] int bulletAmmount;
+    [SerializeField] int bulletSpeed;
+    [SerializeField] int bulletSpred;
+    [SerializeField] float bulletLifetime;
 
     void Start()
     {
@@ -15,6 +24,28 @@ public class TurretGun : MonoBehaviour
     void Update()
     {
         FaceMouse();
+        Shot();
+    }
+
+    void Shot()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            for (int i = 0; i < bulletAmmount; i++)
+            {
+                angle = Random.Range(-bulletSpred, bulletSpred);
+                GameObject b1 = Instantiate(bullet, bulletHole1.transform.position, transform.rotation * Quaternion.Euler(0, 0, angle - 90));
+                GameObject b2 = Instantiate(bullet, bulletHole2.transform.position, transform.rotation * Quaternion.Euler(0, 0, angle - 90));
+                Rigidbody2D rbd1 = b1.GetComponent<Rigidbody2D>();
+                Rigidbody2D rbd2 = b2.GetComponent<Rigidbody2D>();
+                rbd1.linearVelocity = b1.transform.up * bulletSpeed;
+                rbd2.linearVelocity = b2.transform.up * bulletSpeed;
+
+
+                Destroy(b1, bulletLifetime);
+                Destroy(b2, bulletLifetime);
+            }
+        }
     }
 
     void FaceMouse()
@@ -31,12 +62,12 @@ public class TurretGun : MonoBehaviour
 
             if (mouse.x < transform.position.x)
             {
-                localScale.x = -Mathf.Abs(localScale.x);
+                localScale.y = -Mathf.Abs(localScale.y);
                 gunIsFliped = true;
             }
             else
             {
-                localScale.x = Mathf.Abs(localScale.x);
+                localScale.y = Mathf.Abs(localScale.y);
                 gunIsFliped = false;
             }
 
