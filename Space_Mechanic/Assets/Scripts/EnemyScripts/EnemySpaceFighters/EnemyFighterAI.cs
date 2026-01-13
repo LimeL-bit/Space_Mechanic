@@ -220,9 +220,12 @@ public class EnemyFighterAI : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (canAttack)
+        if(collision.gameObject.layer == 9)
         {
-            currentState = State.attack;
+            if (canAttack)
+            {
+                currentState = State.attack;
+            }
         }
     }
 }
