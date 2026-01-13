@@ -12,6 +12,9 @@ public class Projectile : MonoBehaviour
     [SerializeField] bool showGun;
     public bool showGunAdmin;
     public AudioSource ShootGun;
+    public AudioSource ReloadGun;
+    [SerializeField] float soundRate = 0.05f;
+    float soundCooldown = 0f;
 
     [Header("Gun config")]
     [SerializeField] float fireRate;
@@ -58,7 +61,7 @@ public class Projectile : MonoBehaviour
             FaceGun();
             GunColdown();
             Relode();
-
+        
             if (showGun == true)
             {
                 gameObject.SetActive(true);
@@ -71,6 +74,7 @@ public class Projectile : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R) && isReloading == false && currentMagSize < magSize)
             {
                 isReloading = true;
+                ReloadGun.Play();
                 relodeCooldown = relodeSpeed;
             }
 
@@ -82,6 +86,20 @@ public class Projectile : MonoBehaviour
             {
                 ammoCounter.text = "Reloding...";
 
+            }
+            if (Input.GetMouseButton(0) && !isReloading && currentMagSize > 0)
+            {
+                soundCooldown -= Time.deltaTime;
+
+                if (soundCooldown <= 0f)
+                {
+                    ShootGun.PlayOneShot(ShootGun.clip);
+                    soundCooldown = soundRate;
+                }
+            }
+            else
+            {
+                soundCooldown = 0f;
             }
         }
     }
@@ -111,6 +129,7 @@ public class Projectile : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
+                    
                     for (int i = 0; i < bulletAmmount; i++)
                     {
                         angle = Random.Range(bulletSpred, -bulletSpred);
@@ -128,9 +147,8 @@ public class Projectile : MonoBehaviour
                         {
                             rbdc.linearVelocity = bc.transform.right * bulletCartrageSpeed;
                         }
-
-                        ShootGun.Play();
-                        currentMagSize--;
+             
+                            currentMagSize--;
 
                         Destroy(b, bulletLifetime);
                         Destroy(bc, bulletLifetime * 2);
@@ -158,8 +176,6 @@ public class Projectile : MonoBehaviour
                         {
                             rbdc.linearVelocity = bc.transform.right * bulletCartrageSpeed;
                         }
-
-                        ShootGun.Play();
                         currentMagSize--;
 
                         Destroy(b, bulletLifetime);
