@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyFighterHealth : MonoBehaviour
 {
     [SerializeField] float health = 100;
+    [SerializeField] float crashDamage = 5;
     private int randomNumber;
 
     private void Start()
@@ -12,6 +13,10 @@ public class EnemyFighterHealth : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.layer == 9)
+        {
+            collision.gameObject.GetComponent<ShipHealth>().TakeDamage(crashDamage);
+        }
         Destroy(gameObject);
     }
     public void TakeDamage(float amount)

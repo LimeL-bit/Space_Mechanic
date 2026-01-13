@@ -4,6 +4,7 @@ using UnityEngine;
 public class CameraZoom : MonoBehaviour
 {
     [SerializeField] private Camera cam;
+    [SerializeField] private float ZoomOut;
     [SerializeField] private float speed;
     [SerializeField] private float zoomTime = 3;
     private float timer;
@@ -54,9 +55,9 @@ public class CameraZoom : MonoBehaviour
                 PM.enabled = false;
 
                 //stannar när storleken är 8
-                if (cam.orthographicSize > 8)
+                if (cam.orthographicSize > ZoomOut)
                 {
-                    cam.orthographicSize = 8; // Max size
+                    cam.orthographicSize = ZoomOut; // Max size
                     isZoomedOut = true;
                 }
             }
