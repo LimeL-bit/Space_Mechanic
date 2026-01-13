@@ -4,6 +4,7 @@ public class ShowOrHideGun : MonoBehaviour
 {
     public bool showGun;
     [SerializeField] GameObject gun;
+    [SerializeField] Projectile pJ;
 
     void Start()
     {
@@ -12,14 +13,18 @@ public class ShowOrHideGun : MonoBehaviour
 
     void Update()
     {
-        EquipUnequipGun();
+        if(pJ.showGunAdmin == true) 
+        {
+            EquipUnequipGun();
 
-        if(showGun == true)
-        {
-            gun.SetActive(true);
-        }else if ( showGun == false)
-        {
-            gun.SetActive(false);
+            if (showGun == true)
+            {
+                gun.SetActive(true);
+            }
+            else if (showGun == false)
+            {
+                gun.SetActive(false);
+            }
         }
     }
 

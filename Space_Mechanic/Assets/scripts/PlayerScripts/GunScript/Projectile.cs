@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] TextMeshProUGUI ammoCounter;
     [SerializeField] bool isPlayer;
     [SerializeField] bool showGun;
+    public bool showGunAdmin;
     public AudioSource ShootGun;
     public AudioSource ReloadGun;
     [SerializeField] float soundRate = 0.05f;
@@ -55,48 +56,51 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FaceGun();
-        GunColdown();
-        Relode();
-
-        if (showGun == true)
+        if(showGunAdmin == true)
         {
-            gameObject.SetActive(true);
-        }
-        else if (showGun == false)
-        {
-            gameObject.SetActive(false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.R) && isReloading == false && currentMagSize < magSize)
-        {
-            isReloading = true;
-            ReloadGun.Play();
-            relodeCooldown = relodeSpeed;
-        }
-
-        if (isReloading == false)
-        {
-            ammoCounter.text = "Ammo Left: " + currentMagSize.ToString(); ;
-        }
-        else if (isReloading == true)
-        {
-            ammoCounter.text = "Reloding...";
-
-        }
-        if (Input.GetMouseButton(0) && !isReloading && currentMagSize > 0)
-        {
-            soundCooldown -= Time.deltaTime;
-
-            if (soundCooldown <= 0f)
+            FaceGun();
+            GunColdown();
+            Relode();
+        
+            if (showGun == true)
             {
-                ShootGun.PlayOneShot(ShootGun.clip);
-                soundCooldown = soundRate;
+                gameObject.SetActive(true);
             }
-        }
-        else
-        {
-            soundCooldown = 0f;
+            else if (showGun == false)
+            {
+                gameObject.SetActive(false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.R) && isReloading == false && currentMagSize < magSize)
+            {
+                isReloading = true;
+                ReloadGun.Play();
+                relodeCooldown = relodeSpeed;
+            }
+
+            if (isReloading == false)
+            {
+                ammoCounter.text = "Ammo Left: " + currentMagSize.ToString(); ;
+            }
+            else if (isReloading == true)
+            {
+                ammoCounter.text = "Reloding...";
+
+            }
+            if (Input.GetMouseButton(0) && !isReloading && currentMagSize > 0)
+            {
+                soundCooldown -= Time.deltaTime;
+
+                if (soundCooldown <= 0f)
+                {
+                    ShootGun.PlayOneShot(ShootGun.clip);
+                    soundCooldown = soundRate;
+                }
+            }
+            else
+            {
+                soundCooldown = 0f;
+            }
         }
     }
 
