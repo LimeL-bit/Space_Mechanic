@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 616591000}
   - component: {fileID: 616591001}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: ControlPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,6 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraZoom
   cam: {fileID: 1483941860}
+  ZoomOut: 0
   speed: 10
   zoomTime: 0.3
   zoomCoolDown: 0.5
@@ -729,6 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraZoom
   cam: {fileID: 1483941860}
+  ZoomOut: 0
   speed: 10
   zoomTime: 0.3
   zoomCoolDown: 0
