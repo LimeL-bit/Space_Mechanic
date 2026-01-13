@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2586836657188082501}
   - component: {fileID: 7545680862771132116}
   m_Layer: 0
-  m_Name: Enemy Bullet
+  m_Name: Enemy (Standard) Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyProjectile
   speed: 10
   damage: 10
-  lifetime: 5
+  lifetime: 3
 --- !u!61 &2586836657188082501
 BoxCollider2D:
   m_ObjectHideFlags: 0
