@@ -57,8 +57,11 @@ public class pickupTool : MonoBehaviour
     {
         if (othere.CompareTag("Tool"))
         {
-            tempTool = null;
-            canHoldTool = false;
+            if (tempTool == othere.gameObject)
+            {
+                tempTool = null;
+                canHoldTool = false;
+            }
         }
     }
 }
