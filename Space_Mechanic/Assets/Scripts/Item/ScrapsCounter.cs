@@ -9,13 +9,13 @@ public class ScrapsCounter : MonoBehaviour
     void Start()
     {
         textMeshPro = GetComponent<TextMeshProUGUI>();
-        textMeshPro.text = "Scraps: " + scrapsCount;
+        textMeshPro.text =  scrapsCount.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        textMeshPro.text = "Scraps: " + scrapsCount;
+        textMeshPro.text = scrapsCount.ToString();
     }
 
     public void AddScraps(int amount)
