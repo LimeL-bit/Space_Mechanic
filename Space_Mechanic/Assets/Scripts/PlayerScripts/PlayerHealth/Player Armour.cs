@@ -15,7 +15,7 @@ public class ArmorPickup : MonoBehaviour
 
                 if (visual != null)
                 {
-                    visual.gameObject.SetActive(true); 
+                    visual.gameObject.SetActive(true);
                 }
                 playerHealth.isArmored = true;
                 isPickedUp = true;
