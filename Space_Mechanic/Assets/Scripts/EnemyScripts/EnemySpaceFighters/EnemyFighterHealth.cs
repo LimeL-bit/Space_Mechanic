@@ -28,7 +28,7 @@ public class EnemyFighterHealth : MonoBehaviour
     {
         health -= amount;
 
-        if(health <= 25)
+        if(health <= 50)
         {
             if (randomNumber == 0)
             {
