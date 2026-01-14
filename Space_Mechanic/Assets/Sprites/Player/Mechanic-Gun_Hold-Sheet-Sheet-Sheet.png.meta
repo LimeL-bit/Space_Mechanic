@@ -1,0 +1,1081 @@
+fileFormatVersion: 2
+guid: f697e40c6262c3d40922b11ceb6fcdc8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1042777411540492349
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_0
+  - first:
+      213: 6552992604665005006
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_1
+  - first:
+      213: 7745857745222390956
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_2
+  - first:
+      213: -8720726173744718487
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_3
+  - first:
+      213: 8194623440316662513
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_4
+  - first:
+      213: 8822721930586370339
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_5
+  - first:
+      213: 4042090117287029100
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_6
+  - first:
+      213: 6644654245913092500
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_7
+  - first:
+      213: 8353866376959092701
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_8
+  - first:
+      213: -7079536735263177262
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_9
+  - first:
+      213: -6561466067331729757
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_10
+  - first:
+      213: -1653299544496403505
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_11
+  - first:
+      213: -8668945441083367583
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_12
+  - first:
+      213: 7080852307172585174
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_13
+  - first:
+      213: 5155899918003874477
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_14
+  - first:
+      213: -172399479742986501
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_15
+  - first:
+      213: 4827774596353996799
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_16
+  - first:
+      213: 5017525464567503989
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_17
+  - first:
+      213: 5783601661574611180
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_18
+  - first:
+      213: 4338215616431700065
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_19
+  - first:
+      213: 8985809490016177984
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_20
+  - first:
+      213: 9207720387756717351
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_21
+  - first:
+      213: 367723249003192231
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_22
+  - first:
+      213: 8839029760177839907
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_23
+  - first:
+      213: -7447093917149570917
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_24
+  - first:
+      213: 6359963464765022170
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_25
+  - first:
+      213: 5738007898490080542
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_26
+  - first:
+      213: -6474368624681420506
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_27
+  - first:
+      213: 217498522388492954
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_28
+  - first:
+      213: 1063824293856549758
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_29
+  - first:
+      213: -4714368932466955285
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_30
+  - first:
+      213: -3379239635716801113
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_31
+  - first:
+      213: 4707716465163235874
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_32
+  - first:
+      213: -573176276023480862
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_33
+  - first:
+      213: 4210637267412819823
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_34
+  - first:
+      213: 8081257541810019134
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_35
+  - first:
+      213: 1932494034706113890
+    second: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cfd355187f4781f0800000000000000
+      internalID: -1042777411540492349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec3c1d00e08e0fa50800000000000000
+      internalID: 6552992604665005006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca450b87490de7b60800000000000000
+      internalID: 7745857745222390956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96d9e76dfb1c9f680800000000000000
+      internalID: -8720726173744718487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f20a2c1a9629b170800000000000000
+      internalID: 8194623440316662513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32136a0e9da907a70800000000000000
+      internalID: 8822721930586370339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c69a207bb83681830800000000000000
+      internalID: 4042090117287029100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 491e0fee4dd863c50800000000000000
+      internalID: 6644654245913092500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd7e9bb8535eee370800000000000000
+      internalID: 8353866376959092701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d54f4829de60cd90800000000000000
+      internalID: -7079536735263177262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a6b9ea306df0f4a0800000000000000
+      internalID: -6561466067331729757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcb0af6e2dc4e09e0800000000000000
+      internalID: -1653299544496403505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16fdbf62d08b1b780800000000000000
+      internalID: -8668945441083367583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dee60c48ad344260800000000000000
+      internalID: 7080852307172585174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daa261688af6d8740800000000000000
+      internalID: 5155899918003874477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf6057a26938b9df0800000000000000
+      internalID: -172399479742986501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff7b55faa63bff240800000000000000
+      internalID: 4827774596353996799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57cd50773d4d1a540800000000000000
+      internalID: 5017525464567503989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce08380811b734050800000000000000
+      internalID: 5783601661574611180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 168b6784e10743c30800000000000000
+      internalID: 4338215616431700065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f8fbf4f1204bc70800000000000000
+      internalID: 8985809490016177984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7257c5778e468cf70800000000000000
+      internalID: 9207720387756717351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7afdc70c85a6a1500800000000000000
+      internalID: 367723249003192231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32f91865cba8aaa70800000000000000
+      internalID: 8839029760177839907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b98d35be98b96a890800000000000000
+      internalID: -7447093917149570917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adf18cd1311234850800000000000000
+      internalID: 6359963464765022170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1d03eb48cf71af40800000000000000
+      internalID: 5738007898490080542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 629fdecd90c6626a0800000000000000
+      internalID: -6474368624681420506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a927326f0c5b40300800000000000000
+      internalID: 217498522388492954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7b10c21f8673ce00800000000000000
+      internalID: 1063824293856549758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beb6b280f62339eb0800000000000000
+      internalID: -4714368932466955285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7adfd2e84778a11d0800000000000000
+      internalID: -3379239635716801113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 222ff49be2b255140800000000000000
+      internalID: 4707716465163235874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ed60f9b63bab08f0800000000000000
+      internalID: -573176276023480862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6f992a29403f6a30800000000000000
+      internalID: 4210637267412819823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3b580efae4662070800000000000000
+      internalID: 8081257541810019134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mechanic-Gun_Hold-Sheet-Sheet-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2652835f51991da10800000000000000
+      internalID: 1932494034706113890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7ca4f3072d5f8f347a7b59175f751cc7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_0: -1042777411540492349
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_1: 6552992604665005006
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_10: -6561466067331729757
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_11: -1653299544496403505
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_12: -8668945441083367583
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_13: 7080852307172585174
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_14: 5155899918003874477
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_15: -172399479742986501
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_16: 4827774596353996799
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_17: 5017525464567503989
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_18: 5783601661574611180
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_19: 4338215616431700065
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_2: 7745857745222390956
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_20: 8985809490016177984
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_21: 9207720387756717351
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_22: 367723249003192231
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_23: 8839029760177839907
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_24: -7447093917149570917
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_25: 6359963464765022170
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_26: 5738007898490080542
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_27: -6474368624681420506
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_28: 217498522388492954
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_29: 1063824293856549758
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_3: -8720726173744718487
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_30: -4714368932466955285
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_31: -3379239635716801113
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_32: 4707716465163235874
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_33: -573176276023480862
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_34: 4210637267412819823
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_35: 8081257541810019134
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_36: 1932494034706113890
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_4: 8194623440316662513
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_5: 8822721930586370339
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_6: 4042090117287029100
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_7: 6644654245913092500
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_8: 8353866376959092701
+      Mechanic-Gun_Hold-Sheet-Sheet-Sheet_9: -7079536735263177262
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
