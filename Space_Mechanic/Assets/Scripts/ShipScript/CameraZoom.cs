@@ -66,7 +66,7 @@ public class CameraZoom : MonoBehaviour
                     turret.enabled = true;
                 }
 
-                //stannar när storleken är 8
+                //stannar när storleken stämmer med max zoom
                 if (cam.orthographicSize > ZoomOut)
                 {
                     cam.orthographicSize = ZoomOut; // Max size
@@ -92,7 +92,7 @@ public class CameraZoom : MonoBehaviour
                     turret.enabled = false;
                 }
 
-                //stannar när storleken är 5
+                //stannar när storleken stämmer med min zoom 
                 if (cam.orthographicSize < 5)
                 {
                     cam.orthographicSize = 5; // Min size

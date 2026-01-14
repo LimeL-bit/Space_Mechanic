@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Planet Platformer.unity
     guid: 43ad57be93a1fce448b3441d560a8587
+  - enabled: 1
+    path: Assets/Scenes/Intro Scene.unity
+    guid: fcea9605ceb4d464fa0bcda31259ae3e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

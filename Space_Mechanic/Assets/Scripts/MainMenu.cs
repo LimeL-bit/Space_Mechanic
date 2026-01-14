@@ -7,20 +7,22 @@ public class MainMenu : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
     [SerializeField] private string level;
+    [SerializeField] private bool notForMainMenu = false;
+
+    private bool playerIsNearby = false;
+    PlayerMovement PM;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (notForMainMenu)
         {
-            GoToScene();
+            if (Input.GetKeyDown(KeyCode.E) && playerIsNearby)
+            {
+                GoToScene();
+            }
         }
     }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
+    
     public void GoToScene()
     {
         StartCoroutine(LoadLevel());
@@ -33,6 +35,29 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(level); 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 3)
+        {
+            playerIsNearby = true;
+            PM = collision.gameObject.GetComponent<PlayerMovement>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 3)
+        {
+            playerIsNearby = false;
+            PM = null;
+        }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 }
