@@ -3,6 +3,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using static System.TimeZoneInfo;
 
 public class ExitShipCountdown : MonoBehaviour
@@ -20,12 +21,16 @@ public class ExitShipCountdown : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
     [SerializeField] private string level;
+    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] Image icon;
 
     void Start()
     {
         playerInZone = false;
         timeEnded = false;
         currentTimeLeft = totalTimeBeforExitAvalebul;
+        text.enabled = false;
+        icon.enabled = false;
     }
 
     // Update is called once per frame
@@ -43,6 +48,12 @@ public class ExitShipCountdown : MonoBehaviour
         {
             TimerLogic();
             UpdateTimer();
+        }
+
+        if (timeEnded)
+        {
+            text.enabled = true;
+            icon.enabled = true;
         }
         TransferPlayer();
     }
@@ -68,7 +79,7 @@ public class ExitShipCountdown : MonoBehaviour
 
     void TransferPlayer()
     {
-        if (playerInZone == true && Input.GetKeyDown(KeyCode.E))
+        if (playerInZone == true)
         {
             if (timeEnded == true && useTimer == true)
             {
