@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpacecraftMovement
   speed: 20
   turnSpeed: 3.5
-  evadeOffset: 10
+  evadeOffset: 20
   evadeTime: 0.5
   attackFrequency: 4
   ascendTime: 0.5
