@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraZoom : MonoBehaviour
@@ -18,10 +19,17 @@ public class CameraZoom : MonoBehaviour
 
     [SerializeField] private Vector3 cameraTargetPosition;
 
+    [SerializeField] List<TurretGun> turrets = new List<TurretGun>();
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         cam.orthographicSize = 5;
+
+        foreach(TurretGun turret in turrets)
+        {
+            turret.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -51,8 +59,12 @@ public class CameraZoom : MonoBehaviour
                 //åker till en bestämd position
                 cam.transform.position += (cameraTargetPosition - cam.transform.position) / 16;
 
-                //gör så att man inte kan röra sig
+                //gör så att man inte kan röra sig men man kan använda turrets
                 PM.enabled = false;
+                foreach (TurretGun turret in turrets)
+                {
+                    turret.enabled = true;
+                }
 
                 //stannar när storleken är 8
                 if (cam.orthographicSize > ZoomOut)
@@ -73,8 +85,12 @@ public class CameraZoom : MonoBehaviour
                 //åker till den originela positionen
                 cam.transform.position += (new Vector3(0, 0, -10) - cam.transform.position) / 16;
 
-                //gör så att man röra sig igen
+                //gör så att man röra sig igen och inte kunna använda turrets
                 PM.enabled = true;
+                foreach (TurretGun turret in turrets)
+                {
+                    turret.enabled = false;
+                }
 
                 //stannar när storleken är 5
                 if (cam.orthographicSize < 5)

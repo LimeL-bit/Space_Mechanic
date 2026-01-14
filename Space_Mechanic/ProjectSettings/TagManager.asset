@@ -50,5 +50,8 @@ TagManager:
   - name: Tool
     uniqueID: 1359786857
     locked: 0
+  - name: Popup
+    uniqueID: 4293452901
+    locked: 0
   m_RenderingLayers:
   - Default

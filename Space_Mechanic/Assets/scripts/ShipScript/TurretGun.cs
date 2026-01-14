@@ -31,15 +31,10 @@ public class TurretGun : MonoBehaviour
 
     void GunColdown()
     {
-        if (fireCooldown > 0f)
-        {
-            fireCooldown -= Time.deltaTime;
-        }
-
-        if (fireCooldown <= 0f)
+        if (Time.time > fireCooldown)
         {
             Shot();
-            fireCooldown = fireRate;
+            fireCooldown = Time.time + fireRate;
         }
     }
 
