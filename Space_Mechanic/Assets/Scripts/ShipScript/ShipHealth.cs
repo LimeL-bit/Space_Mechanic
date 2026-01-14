@@ -1,21 +1,33 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ShipHealth : MonoBehaviour
 {
     [SerializeField] float maxHealth = 10000;
     [SerializeField] List<GameObject> machines = new List<GameObject>();
+    [SerializeField] TextMeshProUGUI notifier;
     private float health;
 
     public bool hasBrokenMachine = false;
     private void Start()
     {
         health = maxHealth;
+        notifier.enabled = false;
     }
 
     private void Update()
     {
         BreakMachine();
+
+        if (hasBrokenMachine)
+        {
+            notifier.enabled = true;
+        }
+        else
+        {
+            notifier.enabled = false;
+        }
     }
 
     public void TakeDamage(float amount)
@@ -36,7 +48,7 @@ public class ShipHealth : MonoBehaviour
                 if(randomNumber == index)
                 {
                     machines[index].GetComponent<MachenLogic>().isBroken = true;
-                    print(machines[index].name + " is broken");
+                    notifier.text = "The " + machines[index].name + " is broken";
                 }
             }
         }
