@@ -11,30 +11,26 @@ public class Toggle_VSync : MonoBehaviour
 
     private void Start()
     {
-        isToggleOn = false;
+        ApplyState();
     }
 
-    private void Update()
+    private void ApplyState()
     {
         if (isToggleOn)
         {
-            buttonText.text = ("On");
-        }else if (!isToggleOn)
+            QualitySettings.vSyncCount = 1;
+            buttonText.text = "V-Sync: ON";
+        }
+        else
         {
-            buttonText.text = ("Off");
+            QualitySettings.vSyncCount = 0;
+            buttonText.text = "V-Sync: OFF";
         }
     }
 
     public void OnMyButtonClick()
     {
-        Debug.Log("Button clicked!");
-
-        if(isToggleOn)
-        {
-            isToggleOn = false;
-        }else if (!isToggleOn)
-        {
-            isToggleOn = true;
-        }
+        isToggleOn = !isToggleOn;
+        ApplyState();
     }
 }
