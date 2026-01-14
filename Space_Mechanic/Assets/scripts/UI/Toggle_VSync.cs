@@ -8,6 +8,7 @@ public class Toggle_VSync : MonoBehaviour
 {
     private bool isToggleOn;
     [SerializeField] TextMeshProUGUI buttonText;
+    [SerializeField] Save_Settings saveSettings;
 
     private void Start()
     {
