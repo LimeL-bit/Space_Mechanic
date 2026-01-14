@@ -630,7 +630,7 @@ MonoBehaviour:
   isBroken: 0
   timerDisplay: {fileID: 1370218336}
   timeBeforeDestruction: 15
-  gameOverScene: 
+  gameOverScene: GameOver
   player: {fileID: 1613967876}
   area: {fileID: 1613967875}
   fixedMachen: {fileID: 3207493857732141056, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
@@ -1775,7 +1775,7 @@ MonoBehaviour:
   isBroken: 0
   timerDisplay: {fileID: 288929221}
   timeBeforeDestruction: 15
-  gameOverScene: 
+  gameOverScene: GameOver
   player: {fileID: 1613967876}
   area: {fileID: 1613967875}
   fixedMachen: {fileID: -1988106242, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
@@ -4982,7 +4982,7 @@ MonoBehaviour:
   isBroken: 0
   timerDisplay: {fileID: 167290622}
   timeBeforeDestruction: 15
-  gameOverScene: 
+  gameOverScene: GameOver
   player: {fileID: 1613967876}
   area: {fileID: 1613967875}
   fixedMachen: {fileID: -1823617916, guid: 2f1caf0fdf1673b4cac1bf82e0619d4d, type: 3}
