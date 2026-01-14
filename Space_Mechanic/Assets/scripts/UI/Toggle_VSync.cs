@@ -12,6 +12,7 @@ public class Toggle_VSync : MonoBehaviour
 
     private void Start()
     {
+
         ApplyState();
     }
 
