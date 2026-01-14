@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEditor.Overlays;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Save_Settings : MonoBehaviour
 {
@@ -9,6 +10,13 @@ public class Save_Settings : MonoBehaviour
     [SerializeField] float tottalSavingTime;
     private float savingtimer;
 
+    [Header("Sliders + buttons")]
+    [SerializeField] Slider masterVolum;
+    [SerializeField] Slider shotsVolum;
+    [SerializeField] Slider enemyVolum;
+    [SerializeField] Slider backgroundVolum;
+    [SerializeField] Slider fpsLimiter;
+    [SerializeField] Toggle_VSync toggleVsync;
 
     private void Start()
     {
