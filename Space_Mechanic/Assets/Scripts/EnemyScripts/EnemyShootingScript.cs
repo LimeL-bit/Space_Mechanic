@@ -3,67 +3,89 @@ using System.Collections;
 
 public class EnemyShooting : MonoBehaviour
 {
+    // Component references
     private Animator animator;
     private Transform player;
 
+    // General settings
     [Header("Settings")]
     public bool canShoot = true;
     public GameObject projectilePrefab;
     public Transform firePoint;
 
+    // Shooting stats
     [Header("Shooting Stats")]
     public float fireRate = 2f;
-    private float nextFireTime;
+    private float nextFireTime = 0f;
 
+    // Range settings
     [Header("Range Settings")]
     public float shootRange = 10f;
 
+    // Animation settings
     [Header("Animation Settings")]
-    public string idleAnimationName = "Idle";
-    public string shootAnimationName = "Shoot";
-    public string deathAnimationName = "Death";
     public float shootDelay = 0.1f;
 
+    // Death settings
+    [Header("Death Settings")]
+    public float deathDuration = 1.5f;
+
+    // Internal state
     private bool isDead = false;
     private bool isShooting = false;
 
-    void Start()
+    // Animator parameter names (must match Animator exactly)
+    private const string ATTACK_TRIGGER = "attack";
+    private const string DEATH_BOOL = "death";
+
+    void Awake()
     {
         animator = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
-        PlayIdle();
+        if (animator == null)
+        {
+            Debug.LogError("EnemyShooting: No Animator found on this GameObject!");
+        }
+    }
+
+    void Start()
+    {
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+        }
+        else
+        {
+            Debug.LogWarning("EnemyShooting: No GameObject with tag 'Player' found in scene.");
+        }
     }
 
     void Update()
     {
-        if (isDead || !canShoot || player == null) return;
+        if (isDead || player == null || !canShoot)
+            return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        if (distanceToPlayer <= shootRange && Time.time >= nextFireTime)
+        if (distanceToPlayer <= shootRange && Time.time >= nextFireTime && !isShooting)
         {
             Shoot();
             nextFireTime = Time.time + fireRate;
-        }
-        else if (!isShooting)
-        {
-            // Only play idle if not currently shooting
-            PlayIdle();
         }
     }
 
     void Shoot()
     {
-        if (animator != null && !string.IsNullOrEmpty(shootAnimationName))
-        {
-            animator.Play(shootAnimationName, 0, 0f);
-        }
+        if (isDead) return;
 
         isShooting = true;
+
+        // Trigger Idle -> Attack transition
+        animator.SetTrigger(ATTACK_TRIGGER);
+
+        // Spawn projectile after short delay
         StartCoroutine(FireProjectileWithDelay(shootDelay));
-        // Reset shooting state after animation length (assume 0.5s here, adjust to your clip)
-        StartCoroutine(ResetShootingState(0.5f));
     }
 
     private IEnumerator FireProjectileWithDelay(float delay)
@@ -74,11 +96,7 @@ public class EnemyShooting : MonoBehaviour
         {
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         }
-    }
 
-    private IEnumerator ResetShootingState(float duration)
-    {
-        yield return new WaitForSeconds(duration);
         isShooting = false;
     }
 
@@ -90,19 +108,15 @@ public class EnemyShooting : MonoBehaviour
         canShoot = false;
         player = null;
 
-        if (animator != null && !string.IsNullOrEmpty(deathAnimationName))
-        {
-            animator.Play(deathAnimationName, 0, 0f);
-        }
+        // Trigger Any State -> Death
+        animator.SetBool(DEATH_BOOL, true);
 
-        Destroy(gameObject, 1.0f); // adjust to match Death animation length
+        Destroy(gameObject, deathDuration);
     }
 
-    private void PlayIdle()
+    private void OnDrawGizmosSelected()
     {
-        if (animator != null && !string.IsNullOrEmpty(idleAnimationName))
-        {
-            animator.Play(idleAnimationName, 0, 0f);
-        }
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, shootRange);
     }
 }
