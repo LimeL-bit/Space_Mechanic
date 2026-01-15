@@ -4,6 +4,8 @@ using UnityEngine;
 public class EnemyNotifier : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textMeshProUGUI;
+
+    private bool isWarning = false;
     void Start()
     {
         textMeshProUGUI.enabled = false;
@@ -15,6 +17,7 @@ public class EnemyNotifier : MonoBehaviour
         if(transform.childCount > 0)
         {
             textMeshProUGUI.enabled = true;
+            isWarning = true;
         }
         else
         {

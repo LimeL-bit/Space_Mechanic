@@ -45,12 +45,17 @@ public class Projectile : MonoBehaviour
     Rigidbody2D rbBullet;
     Rigidbody2D rbBulletcartage;
 
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
+
     void Start()
     {
         currentMagSize = magSize;
 
         rbBullet = bullet.GetComponent<Rigidbody2D>();
         rbBulletcartage = bulletCartage.GetComponent<Rigidbody2D>();
+        spriteRenderer = transform.parent.GetComponent<SpriteRenderer>();
+        animator = transform.parent.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -119,12 +124,27 @@ public class Projectile : MonoBehaviour
         {
             Gun();
         }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            animator.SetBool("IsShooting", false);
+        }
+
+        if (isReloading)
+        {
+            animator.SetBool("IsShooting", false);
+        }
     }
 
     void Gun()
     {
         if (currentMagSize > 0 && isReloading == false)
         {
+            if (Input.GetMouseButton(0))
+            {
+                animator.SetBool("IsShooting", true);
+            }
+
             if (SemiToggle == true)
             {
                 if (Input.GetMouseButtonDown(0))
@@ -205,12 +225,14 @@ public class Projectile : MonoBehaviour
                 localScale.x = -Mathf.Abs(localScale.x);
                 gunDistansFromPlayerPrivate = -gunDistansFromPlayer;
                 gunIsFliped = true;
+                spriteRenderer.flipX = true;
             }
             else
             {
                 localScale.x = Mathf.Abs(localScale.x);
                 gunDistansFromPlayerPrivate = gunDistansFromPlayer;
                 gunIsFliped = false;
+                spriteRenderer.flipX = false;
             }
 
 

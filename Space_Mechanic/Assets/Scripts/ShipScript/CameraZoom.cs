@@ -13,6 +13,7 @@ public class CameraZoom : MonoBehaviour
 
     private bool playerIsNearby = false;
     PlayerMovement PM;
+    Rigidbody2D playerRigidBody;
 
     [SerializeField] private float zoomCoolDown;
     private float nextZoom;
@@ -60,6 +61,7 @@ public class CameraZoom : MonoBehaviour
                 cam.transform.position += (cameraTargetPosition - cam.transform.position) / 16;
 
                 //gör så att man inte kan röra sig men man kan använda turrets
+                playerRigidBody.linearVelocity = Vector2.zero;
                 PM.enabled = false;
                 foreach (TurretGun turret in turrets)
                 {
@@ -114,6 +116,7 @@ public class CameraZoom : MonoBehaviour
         {
             playerIsNearby = true;
             PM = collision.gameObject.GetComponent<PlayerMovement>();
+            playerRigidBody = collision.gameObject.GetComponent<Rigidbody2D>();
         }
     }
 
@@ -123,6 +126,7 @@ public class CameraZoom : MonoBehaviour
         {
             playerIsNearby = false;
             PM = null;
+            playerRigidBody = null;
         }
     }
 }

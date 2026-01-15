@@ -7,6 +7,8 @@ public class ShipHealth : MonoBehaviour
     [SerializeField] float maxHealth = 10000;
     [SerializeField] List<GameObject> machines = new List<GameObject>();
     [SerializeField] TextMeshProUGUI notifier;
+
+    [SerializeField] List<AudioSource> audio = new List<AudioSource>();
     private float health;
 
     public bool hasBrokenMachine = false;
@@ -49,6 +51,7 @@ public class ShipHealth : MonoBehaviour
                 {
                     machines[index].GetComponent<MachenLogic>().isBroken = true;
                     notifier.text = "The " + machines[index].name + " is broken";
+                    audio[index].Play();
                 }
             }
         }

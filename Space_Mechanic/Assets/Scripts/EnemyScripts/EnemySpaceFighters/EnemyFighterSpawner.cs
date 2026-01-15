@@ -14,6 +14,7 @@ public class EnemyFighterSpawner : MonoBehaviour
     [SerializeField] float minimumSpawnTime = 10;
     [SerializeField] float maximumSpawnTime = 30;
     [SerializeField] GameObject notifier;
+    [SerializeField] AudioSource audio;
     private float nextSpawn;
 
     void Start()
@@ -33,6 +34,7 @@ public class EnemyFighterSpawner : MonoBehaviour
 
     private void SpawnFighter(GameObject spawn)
     {
+        audio.Play();
         for(int i = 0; i < squadCount; i++)
         {
             GameObject fighterClone = Instantiate(fighter, new Vector2(spawn.transform.position.x + i * 2, spawn.transform.position.y + i * 2), Quaternion.identity, notifier.transform);

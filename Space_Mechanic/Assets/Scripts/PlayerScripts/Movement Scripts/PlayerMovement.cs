@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float gravity;
 
     private bool canJump = true;
+    private bool isJumping = false;
     private bool canClimbLadder = false;
     private bool isClimbing = false;
     public AudioSource jumpSound;
@@ -18,11 +19,13 @@ public class PlayerMovement : MonoBehaviour
     
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
 
         rb.gravityScale = gravity;
     }
@@ -41,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
         PlayerInput();
         Climb();
 
+        animator.SetFloat("Movement", Mathf.Abs(xDirection));
+        animator.SetBool("IsJumping", isJumping);
         rb.linearVelocity = new Vector2(xDirection, yDirection);
     }
 
@@ -63,11 +68,12 @@ public class PlayerMovement : MonoBehaviour
         //jump
         if (Input.GetKeyDown(KeyCode.Space) && canJump && !isClimbing)
         {
+            isJumping = true;
+            animator.SetTrigger("Jump");
             yDirection = jumpPower;
             jumpSound.Play();
         }
     }
-
     private void Climb()
     {
         //the code wont work if canClimb is true
@@ -110,6 +116,8 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.layer == 6)
         {
             canJump = true;
+            isJumping = false;
+            animator.SetTrigger("Land");
         }
     }
 
