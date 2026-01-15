@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
+    private Animator animator;
     [Header("Enemy Stats")]
+    public string DeathAnimationName = "Death";
     public int enemyMaxHealth = 100;
     private int currentHealth;
     public AudioSource DamageTaken;
@@ -15,6 +17,7 @@ public class EnemyDamage : MonoBehaviour
     private void Start()
     {
         currentHealth = enemyMaxHealth;
+        animator = GetComponent<Animator>();
     }
     public void TakeDamage(int amount)
     {
@@ -49,7 +52,10 @@ public class EnemyDamage : MonoBehaviour
             Debug.Log("FreezeFrame.Instance is NULL");
             FreezeFrame.Instance.StopTime(0.05f);
         }
-
+        if (animator != null)
+        {
+            animator.Play(DeathAnimationName, 0, 0f);
+        }
         if (scrapPrefab != null)
         {
             Instantiate(scrapPrefab, transform.position, Quaternion.identity);

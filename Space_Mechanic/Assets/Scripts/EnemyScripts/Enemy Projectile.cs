@@ -25,7 +25,10 @@ public class EnemyProjectile : MonoBehaviour
             }
             Destroy(gameObject);
         }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            Destroy(gameObject);
+        }
     }
-    
 }
 

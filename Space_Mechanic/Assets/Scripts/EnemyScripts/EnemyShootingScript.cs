@@ -1,9 +1,10 @@
 using UnityEngine;
-using System.Collections; // Needed for coroutines
+using System.Collections;
 
 public class EnemyShooting : MonoBehaviour
 {
     private Animator animator;
+    private Transform player;
 
     [Header("Settings")]
     public bool canShoot = true;
@@ -14,37 +15,94 @@ public class EnemyShooting : MonoBehaviour
     public float fireRate = 2f;
     private float nextFireTime;
 
+    [Header("Range Settings")]
+    public float shootRange = 10f;
+
     [Header("Animation Settings")]
-    public string shootAnimationName = "Shoot"; // Name of the shooting animation
-    public float shootDelay = 0.1f; // Delay before projectile spawns (adjust to match animation)
+    public string idleAnimationName = "Idle";
+    public string shootAnimationName = "Shoot";
+    public string deathAnimationName = "Death";
+    public float shootDelay = 0.1f;
+
+    private bool isDead = false;
+    private bool isShooting = false;
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+
+        PlayIdle();
     }
+
     void Update()
     {
-        if (canShoot && Time.time >= nextFireTime)
+        if (isDead || !canShoot || player == null) return;
+
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        if (distanceToPlayer <= shootRange && Time.time >= nextFireTime)
         {
             Shoot();
             nextFireTime = Time.time + fireRate;
         }
+        else if (!isShooting)
+        {
+            // Only play idle if not currently shooting
+            PlayIdle();
+        }
     }
+
     void Shoot()
     {
-        if (animator != null)
+        if (animator != null && !string.IsNullOrEmpty(shootAnimationName))
         {
             animator.Play(shootAnimationName, 0, 0f);
         }
+
+        isShooting = true;
         StartCoroutine(FireProjectileWithDelay(shootDelay));
+        // Reset shooting state after animation length (assume 0.5s here, adjust to your clip)
+        StartCoroutine(ResetShootingState(0.5f));
     }
+
     private IEnumerator FireProjectileWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        if (projectilePrefab != null && firePoint != null)
+
+        if (!isDead && projectilePrefab != null && firePoint != null)
         {
-            Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+            Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        }
+    }
+
+    private IEnumerator ResetShootingState(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        isShooting = false;
+    }
+
+    public void Die()
+    {
+        if (isDead) return;
+
+        isDead = true;
+        canShoot = false;
+        player = null;
+
+        if (animator != null && !string.IsNullOrEmpty(deathAnimationName))
+        {
+            animator.Play(deathAnimationName, 0, 0f);
+        }
+
+        Destroy(gameObject, 1.0f); // adjust to match Death animation length
+    }
+
+    private void PlayIdle()
+    {
+        if (animator != null && !string.IsNullOrEmpty(idleAnimationName))
+        {
+            animator.Play(idleAnimationName, 0, 0f);
         }
     }
 }
-
-

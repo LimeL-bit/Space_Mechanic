@@ -72,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("Jump");
             yDirection = jumpPower;
             jumpSound.Play();
+            canJump = false;
         }
     }
     private void Climb()
