@@ -194,6 +194,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45145541}
   m_CullTransparentMesh: 1
+--- !u!1 &210088323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7703989233153428266, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+  m_PrefabInstance: {fileID: 1133068242}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &219765086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,6 +1556,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7512586826890899442, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
+      propertyPath: level
+      value: Credits
+      objectReference: {fileID: 0}
     - target: {fileID: 7553367192152660790, guid: 0302d70f2a3c3eb4cb5017c03c42c148, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1052.4288
@@ -2663,9 +2672,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2018996931}
+      - m_Target: {fileID: 210088323}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: GoToScene
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
