@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class SettingsData
 {
     public float masterVol;
-    public float gunVol;
+    public float VoiceVol;
     public float musicVol;
     public float backgroundVol;
     public float fpsLimit;
@@ -24,7 +24,7 @@ public class Save_Settings : MonoBehaviour
 
     [Header("Sliders + buttons")]
     [SerializeField] Slider masterVolum;
-    [SerializeField] Slider gunsVolum;
+    [SerializeField] Slider voiceVolum;
     [SerializeField] Slider musicVolum;
     [SerializeField] Slider backgroundVolum;
     [SerializeField] Slider fpsLimiter;
@@ -72,7 +72,7 @@ public class Save_Settings : MonoBehaviour
         SettingsData data = new SettingsData
         {
             masterVol = masterVolum.value,
-            gunVol = gunsVolum.value,
+            VoiceVol = voiceVolum.value,
             musicVol = musicVolum.value,
             backgroundVol = backgroundVolum.value,
             fpsLimit = fpsLimiter.value,
@@ -93,7 +93,7 @@ public class Save_Settings : MonoBehaviour
             SettingsData data = JsonUtility.FromJson<SettingsData>(json);
 
             masterVolum.value = data.masterVol;
-            gunsVolum.value = data.gunVol;
+            voiceVolum.value = data.VoiceVol;
             musicVolum.value = data.musicVol;
             backgroundVolum.value = data.backgroundVol;
             fpsLimiter.value = data.fpsLimit;

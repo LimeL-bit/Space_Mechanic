@@ -1170,7 +1170,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: gun Volum
+  m_text: Voice Volum
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a5748945115ed0a449c57d9d3458f413, type: 2}
   m_sharedMaterial: {fileID: 4093349757569758244, guid: a5748945115ed0a449c57d9d3458f413, type: 2}
@@ -1317,7 +1317,7 @@ MonoBehaviour:
   saveText: {fileID: 782640529}
   totalSavingTime: 0
   masterVolum: {fileID: 2067933987}
-  gunsVolum: {fileID: 1697164407}
+  voiceVolum: {fileID: 1697164407}
   musicVolum: {fileID: 1021505109}
   backgroundVolum: {fileID: 568695159}
   fpsLimiter: {fileID: 1767100905}
@@ -3614,7 +3614,7 @@ GameObject:
   - component: {fileID: 1697164406}
   - component: {fileID: 1697164407}
   m_Layer: 5
-  m_Name: Gun Volum
+  m_Name: Voice Volum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
