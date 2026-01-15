@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class SettingsData
 {
     public float masterVol;
-    public float shotsVol;
-    public float enemyVol;
+    public float gunVol;
+    public float musicVol;
     public float backgroundVol;
     public float fpsLimit;
     public bool vsyncOn;
@@ -24,8 +24,8 @@ public class Save_Settings : MonoBehaviour
 
     [Header("Sliders + buttons")]
     [SerializeField] Slider masterVolum;
-    [SerializeField] Slider shotsVolum;
-    [SerializeField] Slider enemyVolum;
+    [SerializeField] Slider gunsVolum;
+    [SerializeField] Slider musicVolum;
     [SerializeField] Slider backgroundVolum;
     [SerializeField] Slider fpsLimiter;
     [SerializeField] Toggle_VSync toggleVsync;
@@ -72,8 +72,8 @@ public class Save_Settings : MonoBehaviour
         SettingsData data = new SettingsData
         {
             masterVol = masterVolum.value,
-            shotsVol = shotsVolum.value,
-            enemyVol = enemyVolum.value,
+            gunVol = gunsVolum.value,
+            musicVol = musicVolum.value,
             backgroundVol = backgroundVolum.value,
             fpsLimit = fpsLimiter.value,
             vsyncOn = toggleVsync.isToggleOn
@@ -93,8 +93,8 @@ public class Save_Settings : MonoBehaviour
             SettingsData data = JsonUtility.FromJson<SettingsData>(json);
 
             masterVolum.value = data.masterVol;
-            shotsVolum.value = data.shotsVol;
-            enemyVolum.value = data.enemyVol;
+            gunsVolum.value = data.gunVol;
+            musicVolum.value = data.musicVol;
             backgroundVolum.value = data.backgroundVol;
             fpsLimiter.value = data.fpsLimit;
             toggleVsync.isToggleOn = data.vsyncOn;
