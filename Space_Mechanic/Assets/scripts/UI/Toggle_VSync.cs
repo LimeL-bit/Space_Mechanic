@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class Toggle_VSync : MonoBehaviour
 {
-    private bool isToggleOn;
+    public bool isToggleOn;
     [SerializeField] TextMeshProUGUI buttonText;
     [SerializeField] Save_Settings saveSettings;
 
