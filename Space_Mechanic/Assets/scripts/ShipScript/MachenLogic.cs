@@ -2,6 +2,7 @@ using TMPro;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MachenLogic : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class MachenLogic : MonoBehaviour
     public string toolToFix;
     public bool isBroken = false;
     [SerializeField] TextMeshProUGUI timerDisplay;
+    [SerializeField] Image toolDisplay;
     [SerializeField] float timeBeforeDestruction = 15;
     private float timer;
     [SerializeField] string gameOverScene;
@@ -28,6 +30,7 @@ public class MachenLogic : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         timer = timeBeforeDestruction;
         timerDisplay.enabled = false;
+        toolDisplay.enabled = false;
     }
 
     void Update()
@@ -42,8 +45,9 @@ public class MachenLogic : MonoBehaviour
         {
             spriteRenderer.sprite = brockenMachen;
             timerDisplay.enabled = true;
+            toolDisplay.enabled = true;
 
-            if(timer > 0)
+            if (timer > 0)
             {
                 timer -= Time.deltaTime;
                 timerDisplay.text = ((int)timer % 60).ToString();
@@ -58,6 +62,7 @@ public class MachenLogic : MonoBehaviour
         {
             spriteRenderer.sprite = fixedMachen;
             timerDisplay.enabled = false;
+            toolDisplay.enabled = false;
         }
     }
 
