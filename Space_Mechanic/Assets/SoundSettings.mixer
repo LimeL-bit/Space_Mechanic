@@ -100,6 +100,7 @@ AudioMixerSnapshotController:
   m_SnapshotID: 883d1e4079519ed46a50bd7caae709fe
   m_FloatValues:
     95de9649519806c4f81b2cb17e5c5987: 0
+    2b262b7f9ecfef5479ce65d304279d6d: -0.02577656
   m_TransitionOverrides: {}
 --- !u!243 &1135594849911961834
 AudioMixerGroupController:
@@ -107,7 +108,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Gun
+  m_Name: Voice
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: ac02c42b90f3f9a48974669c2ad5f7de
   m_Children: []
