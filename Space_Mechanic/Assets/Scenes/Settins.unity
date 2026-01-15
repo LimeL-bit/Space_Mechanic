@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   saveText: {fileID: 782640529}
-  tottalSavingTime: 3
+  totalSavingTime: 0
   masterVolum: {fileID: 2067933987}
   shotsVolum: {fileID: 1697164407}
   enemyVolum: {fileID: 1021505109}
@@ -1506,8 +1506,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2543,8 +2543,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3736,8 +3736,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 785, y: -470}
-  m_SizeDelta: {x: 250, y: 40}
+  m_AnchoredPosition: {x: 770, y: -460}
+  m_SizeDelta: {x: 280, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1736112707
 MonoBehaviour:
@@ -4318,6 +4318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1556ba9608aabaa4f8c5f5ca15140a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  isToggleOn: 0
   buttonText: {fileID: 1197797794}
   saveSettings: {fileID: 712191439}
 --- !u!1 &1855603382
