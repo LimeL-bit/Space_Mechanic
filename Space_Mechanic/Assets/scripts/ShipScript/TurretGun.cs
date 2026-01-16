@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -17,10 +18,14 @@ public class TurretGun : MonoBehaviour
     [SerializeField] int bulletSpred;
     [SerializeField] float bulletLifetime;
     [SerializeField] float fireRate;
+    [SerializeField] List<Sprite> turretSprites = new List<Sprite>();
+    [SerializeField] bool isUpsideDown = false;
+
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
-        
+        spriteRenderer = transform.parent.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -73,15 +78,90 @@ public class TurretGun : MonoBehaviour
 
             if (mouse.x < transform.position.x)
             {
-                localScale.y = -Mathf.Abs(localScale.y);
+                //localScale.y = -Mathf.Abs(localScale.y);
                 gunIsFliped = true;
             }
             else
             {
-                localScale.y = Mathf.Abs(localScale.y);
+                //localScale.y = Mathf.Abs(localScale.y);
                 gunIsFliped = false;
             }
 
             transform.localScale = localScale;
+        SpriteRotator(gunAngle);
+    }
+
+    private void SpriteRotator(float angle)
+    {
+        if (!isUpsideDown)
+        {
+            if (gunAngle <= 0 && gunAngle > -90)
+            {
+                spriteRenderer.sprite = turretSprites[0];
+            }
+            else if (gunAngle > 0 && gunAngle < 22.5)
+            {
+                spriteRenderer.sprite = turretSprites[1];
+            }
+            else if (gunAngle > 22.5 && gunAngle < 45)
+            {
+                spriteRenderer.sprite = turretSprites[2];
+            }
+            else if (gunAngle > 45 && gunAngle < 90)
+            {
+                spriteRenderer.sprite = turretSprites[3];
+            }
+            else if (gunAngle > 90 && gunAngle < 112.5)
+            {
+                spriteRenderer.sprite = turretSprites[4];
+            }
+            else if (gunAngle > 112.5 && gunAngle < 135)
+            {
+                spriteRenderer.sprite = turretSprites[5];
+            }
+            else if (gunAngle > 135 && gunAngle < 180)
+            {
+                spriteRenderer.sprite = turretSprites[6];
+            }
+            else if (gunAngle > -180 && gunAngle < -90)
+            {
+                spriteRenderer.sprite = turretSprites[6];
+            }
+        }
+        else
+        {
+            if (gunAngle >= 0 && gunAngle < 90)
+            {
+                spriteRenderer.sprite = turretSprites[0];
+            }
+            else if (gunAngle > -22.5 && gunAngle < 0)
+            {
+                spriteRenderer.sprite = turretSprites[1];
+            }
+            else if (gunAngle > -45 && gunAngle < -22.5)
+            {
+                spriteRenderer.sprite = turretSprites[2];
+            }
+            else if (gunAngle > -90 && gunAngle < -45)
+            {
+                spriteRenderer.sprite = turretSprites[3];
+            }
+            else if (gunAngle > -112.5 && gunAngle < -90)
+            {
+                spriteRenderer.sprite = turretSprites[4];
+            }
+            else if (gunAngle > -135 && gunAngle < -112.5)
+            {
+                spriteRenderer.sprite = turretSprites[5];
+            }
+            else if (gunAngle > -180 && gunAngle < -135)
+            {
+                spriteRenderer.sprite = turretSprites[6];
+            }
+            else if (gunAngle > -180 && gunAngle > 90)
+            {
+                spriteRenderer.sprite = turretSprites[6];
+            }
+        }
     }
 }

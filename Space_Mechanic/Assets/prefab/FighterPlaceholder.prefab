@@ -270,7 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFighterHealth
   health: 250
   crashDamage: 5
-  despawnTime: 10
+  despawnTime: 5
 --- !u!82 &5683204234669407408
 AudioSource:
   m_ObjectHideFlags: 0

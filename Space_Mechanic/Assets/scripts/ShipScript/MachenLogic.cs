@@ -18,10 +18,12 @@ public class MachenLogic : MonoBehaviour
     [Header("scripts")]
     [SerializeField] pickupTool player;
     [SerializeField] FixBrockenAria area;
+    [SerializeField] PopupText popup;
 
     [Header("sprites")]
     [SerializeField] Sprite fixedMachen;
     [SerializeField] Sprite brockenMachen;
+    [SerializeField] GameObject effects;
 
     private SpriteRenderer spriteRenderer;
 
@@ -31,6 +33,11 @@ public class MachenLogic : MonoBehaviour
         timer = timeBeforeDestruction;
         timerDisplay.enabled = false;
         toolDisplay.enabled = false;
+
+        if (effects != null)
+        {
+            effects.SetActive(false);
+        }
     }
 
     void Update()
@@ -47,6 +54,11 @@ public class MachenLogic : MonoBehaviour
             timerDisplay.enabled = true;
             toolDisplay.enabled = true;
 
+            if(effects != null)
+            {
+                effects.SetActive(true);
+            }
+
             if (timer > 0)
             {
                 timer -= Time.deltaTime;
@@ -57,12 +69,27 @@ public class MachenLogic : MonoBehaviour
                 print("GameOver");
                 SceneManager.LoadScene(gameOverScene);
             }
+
+            if (player.isHoldingTool && player.currentTool.name == toolToFix)
+            {
+                popup.canShow = true;
+            }
+            else
+            {
+                popup.canShow = false;
+            }
         }
         else if(!isBroken)
         {
             spriteRenderer.sprite = fixedMachen;
             timerDisplay.enabled = false;
             toolDisplay.enabled = false;
+            popup.canShow = false;
+
+            if (effects != null)
+            {
+                effects.SetActive(false);
+            }
         }
     }
 

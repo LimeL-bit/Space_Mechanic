@@ -5,6 +5,7 @@ public class PopupText : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textMeshProUGUI;
     [SerializeField] string text;
+    public bool canShow = true;
     void Start()
     {
         textMeshProUGUI.enabled = false;
@@ -13,7 +14,7 @@ public class PopupText : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 3)
+        if(collision.gameObject.layer == 3 && canShow)
         {
             textMeshProUGUI.enabled = true;
         }
