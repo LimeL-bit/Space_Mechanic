@@ -5814,7 +5814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea252794f1ecd94ab154764c7731b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  totalTimeBeforExitAvalebul: 10
+  totalTimeBeforExitAvalebul: 300
   timer: {fileID: 1887469205}
   useTimer: 1
   seconds: 0
