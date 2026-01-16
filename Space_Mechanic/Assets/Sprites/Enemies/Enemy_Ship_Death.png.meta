@@ -1,0 +1,365 @@
+fileFormatVersion: 2
+guid: 09234e19147d5b547af7882bf5aaefc9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3629632421125411026
+    second: Enemy_Ship_Death_0
+  - first:
+      213: 5251101231875579705
+    second: Enemy_Ship_Death_1
+  - first:
+      213: 8761832955017813827
+    second: Enemy_Ship_Death_2
+  - first:
+      213: 7979538014228669335
+    second: Enemy_Ship_Death_3
+  - first:
+      213: -6545972776031888788
+    second: Enemy_Ship_Death_4
+  - first:
+      213: -4409499755691056160
+    second: Enemy_Ship_Death_5
+  - first:
+      213: -8182226315030621069
+    second: Enemy_Ship_Death_6
+  - first:
+      213: 2401013013899285136
+    second: Enemy_Ship_Death_7
+  - first:
+      213: -5616284363299949518
+    second: Enemy_Ship_Death_8
+  - first:
+      213: -2721992352465950052
+    second: Enemy_Ship_Death_9
+  - first:
+      213: -5307592017196973611
+    second: Enemy_Ship_Death_10
+  - first:
+      213: -4368721093388705772
+    second: Enemy_Ship_Death_11
+  - first:
+      213: 1644395127952003936
+    second: Enemy_Ship_Death_12
+  - first:
+      213: -3683117348374540605
+    second: Enemy_Ship_Death_13
+  - first:
+      213: 5077469129009479379
+    second: Enemy_Ship_Death_14
+  - first:
+      213: -3341223371946174194
+    second: Enemy_Ship_Death_15
+  - first:
+      213: -7387313582810013587
+    second: Enemy_Ship_Death_16
+  - first:
+      213: -8854786066597542674
+    second: Enemy_Ship_Death_17
+  - first:
+      213: -917593207990254485
+    second: Enemy_Ship_Death_18
+  - first:
+      213: 4700388725718824369
+    second: Enemy_Ship_Death_19
+  - first:
+      213: 7087296688748273131
+    second: Enemy_Ship_Death_20
+  - first:
+      213: 1263880636855729256
+    second: Enemy_Ship_Death_21
+  - first:
+      213: -2882109673360507310
+    second: Enemy_Ship_Death_22
+  - first:
+      213: -3404373487716378192
+    second: Enemy_Ship_Death_23
+  - first:
+      213: -242180484831055636
+    second: Enemy_Ship_Death_24
+  - first:
+      213: 5281451760875988706
+    second: Enemy_Ship_Death_25
+  - first:
+      213: -8807790401936295815
+    second: Enemy_Ship_Death_26
+  - first:
+      213: -348577201771792261
+    second: Enemy_Ship_Death_27
+  - first:
+      213: -5750598977822114561
+    second: Enemy_Ship_Death_28
+  - first:
+      213: -8521512096904170844
+    second: Enemy_Ship_Death_29
+  - first:
+      213: 5568746734388303056
+    second: Enemy_Ship_Death_30
+  - first:
+      213: -6627987509840159865
+    second: Enemy_Ship_Death_31
+  - first:
+      213: 1484159960147325697
+    second: Enemy_Ship_Death_32
+  - first:
+      213: 9178284301451368279
+    second: Enemy_Ship_Death_33
+  - first:
+      213: -937607701618437437
+    second: Enemy_Ship_Death_34
+  - first:
+      213: 4895155803890027256
+    second: Enemy_Ship_Death_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Enemy_Ship_Death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d0db66d47b0f5230800000000000000
+      internalID: 3629632421125411026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_Ship_Death_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93f5f85bfb8afd840800000000000000
+      internalID: 5251101231875579705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_Ship_Death_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34fd52186a8489970800000000000000
+      internalID: 8761832955017813827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_Ship_Death_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79363d9eb830dbe60800000000000000
+      internalID: 7979538014228669335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_Ship_Death_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6add3731780825a0800000000000000
+      internalID: -6545972776031888788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_Ship_Death_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3ecd0b55f4ec2c0800000000000000
+      internalID: -4409499755691056160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 198fccc07a7a46b4b9df0c99008249db
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":96.0,"y":90.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Enemy_Ship_Death_0: 3629632421125411026
+      Enemy_Ship_Death_1: 5251101231875579705
+      Enemy_Ship_Death_2: 8761832955017813827
+      Enemy_Ship_Death_3: 7979538014228669335
+      Enemy_Ship_Death_4: -6545972776031888788
+      Enemy_Ship_Death_5: -4409499755691056160
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

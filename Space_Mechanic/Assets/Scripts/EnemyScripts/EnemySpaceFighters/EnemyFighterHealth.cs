@@ -6,6 +6,7 @@ public class EnemyFighterHealth : MonoBehaviour
     [SerializeField] float health = 100;
     [SerializeField] float crashDamage = 5;
     [SerializeField] float despawnTime = 20;
+    [SerializeField] GameObject explosion;
 
     private bool hasLowHealth = false;
 
@@ -48,6 +49,9 @@ public class EnemyFighterHealth : MonoBehaviour
 
         if(health <= 0)
         {
+            GameObject explosionClone = Instantiate(explosion, transform.position, Quaternion.identity);
+            Destroy(explosionClone, 0.5f);
+
             Destroy(gameObject);
             print("vanquished");
         }
