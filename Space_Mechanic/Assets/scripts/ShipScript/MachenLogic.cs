@@ -2,6 +2,7 @@ using TMPro;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MachenLogic : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class MachenLogic : MonoBehaviour
     public string toolToFix;
     public bool isBroken = false;
     [SerializeField] TextMeshProUGUI timerDisplay;
+    [SerializeField] Image toolDisplay;
     [SerializeField] float timeBeforeDestruction = 15;
     private float timer;
     [SerializeField] string gameOverScene;
@@ -16,10 +18,12 @@ public class MachenLogic : MonoBehaviour
     [Header("scripts")]
     [SerializeField] pickupTool player;
     [SerializeField] FixBrockenAria area;
+    [SerializeField] PopupText popup;
 
     [Header("sprites")]
     [SerializeField] Sprite fixedMachen;
     [SerializeField] Sprite brockenMachen;
+    [SerializeField] GameObject effects;
 
     private SpriteRenderer spriteRenderer;
 
@@ -28,12 +32,18 @@ public class MachenLogic : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         timer = timeBeforeDestruction;
         timerDisplay.enabled = false;
+        toolDisplay.enabled = false;
+
+        if (effects != null)
+        {
+            effects.SetActive(false);
+        }
     }
 
     void Update()
     {
         LogicForLooks();
-        logic();
+        Logic();
     }
 
     void LogicForLooks()
@@ -42,8 +52,14 @@ public class MachenLogic : MonoBehaviour
         {
             spriteRenderer.sprite = brockenMachen;
             timerDisplay.enabled = true;
+            toolDisplay.enabled = true;
 
-            if(timer > 0)
+            if(effects != null)
+            {
+                effects.SetActive(true);
+            }
+
+            if (timer > 0)
             {
                 timer -= Time.deltaTime;
                 timerDisplay.text = ((int)timer % 60).ToString();
@@ -53,15 +69,31 @@ public class MachenLogic : MonoBehaviour
                 print("GameOver");
                 SceneManager.LoadScene(gameOverScene);
             }
+
+            if (player.isHoldingTool && player.currentTool.name == toolToFix)
+            {
+                popup.canShow = true;
+            }
+            else
+            {
+                popup.canShow = false;
+            }
         }
         else if(!isBroken)
         {
             spriteRenderer.sprite = fixedMachen;
             timerDisplay.enabled = false;
+            toolDisplay.enabled = false;
+            popup.canShow = false;
+
+            if (effects != null)
+            {
+                effects.SetActive(false);
+            }
         }
     }
 
-    void logic()
+    void Logic()
     {
         if (!isBroken) return;
 

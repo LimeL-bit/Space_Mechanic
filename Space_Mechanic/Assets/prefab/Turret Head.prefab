@@ -26,11 +26,11 @@ Transform:
   m_GameObject: {fileID: 5221616857091623296}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6357, y: -0.1617, z: 0}
-  m_LocalScale: {x: 0.6164937, y: 0.2364646, z: 0.7741736}
+  m_LocalPosition: {x: 0.8211336, y: -0.20886779, z: 0}
+  m_LocalScale: {x: 0.7963248, y: 0.3054413, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6913899608830602902}
+  m_Father: {fileID: 4046855362192741140}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6469247433996132277
 SpriteRenderer:
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +101,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6913899608830602902}
   - component: {fileID: 1506562989658140873}
-  - component: {fileID: 5890236107784453623}
   m_Layer: 0
   m_Name: Turret Head
   m_TagString: Untagged
@@ -117,13 +116,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7362516023262781795}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.79, y: 3.9880002, z: 0}
   m_LocalScale: {x: 1.2917, y: 1.2916999, z: 1.2917}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5390894301841736998}
-  - {fileID: 2689371181224056408}
+  - {fileID: 4046855362192741140}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1506562989658140873
@@ -171,11 +169,11 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -340556353
+  m_SortingLayer: 6
+  m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -5001243045964558102, guid: faefe19bf234f584aaf7d17741490ff1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -185,26 +183,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5890236107784453623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7362516023262781795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f3925c9abd46ab4990af835f9fcee61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  bullet: {fileID: 6976797546403140940, guid: 5b02b6537ed22484c9b8503ac85582f5, type: 3}
-  bulletHole1: {fileID: 7533423901533628543}
-  bulletHole2: {fileID: 5221616857091623296}
-  bulletAmmount: 1
-  bulletSpeed: 100
-  bulletSpred: 1
-  bulletLifetime: 1
-  fireRate: 0.2
 --- !u!1 &7533423901533628543
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,11 +209,11 @@ Transform:
   m_GameObject: {fileID: 7533423901533628543}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6357, y: 0.1617, z: 0}
-  m_LocalScale: {x: 0.6164937, y: 0.23646457, z: 0.7741736}
+  m_LocalPosition: {x: 0.8211336, y: 0.20886779, z: 0}
+  m_LocalScale: {x: 0.7963248, y: 0.30544126, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6913899608830602902}
+  m_Father: {fileID: 4046855362192741140}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2465973161821240110
 SpriteRenderer:
@@ -287,7 +265,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -296,3 +274,66 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &7562712292941253446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4046855362192741140}
+  - component: {fileID: 4833436883207235041}
+  m_Layer: 0
+  m_Name: Turret
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4046855362192741140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7562712292941253446}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7741736, y: 0.7741736, z: 0.7741736}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5390894301841736998}
+  - {fileID: 2689371181224056408}
+  m_Father: {fileID: 6913899608830602902}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4833436883207235041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7562712292941253446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3925c9abd46ab4990af835f9fcee61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  bullet: {fileID: 5215658069438157012, guid: afbbda6e4fd024c49b8ff55ae0812e4a, type: 3}
+  bulletHole1: {fileID: 7533423901533628543}
+  bulletHole2: {fileID: 5221616857091623296}
+  bulletAmmount: 1
+  bulletSpeed: 100
+  bulletSpred: 1
+  bulletLifetime: 1
+  fireRate: 0.2
+  turretSprites:
+  - {fileID: -5001243045964558102, guid: faefe19bf234f584aaf7d17741490ff1, type: 3}
+  - {fileID: 7020279684794561731, guid: faefe19bf234f584aaf7d17741490ff1, type: 3}
+  - {fileID: 7287133490840125656, guid: faefe19bf234f584aaf7d17741490ff1, type: 3}
+  - {fileID: 5730931598169077541, guid: faefe19bf234f584aaf7d17741490ff1, type: 3}
+  - {fileID: 6253467693551990395, guid: faefe19bf234f584aaf7d17741490ff1, type: 3}
+  - {fileID: -6952599263255686372, guid: faefe19bf234f584aaf7d17741490ff1, type: 3}
+  - {fileID: 4651424276792425338, guid: faefe19bf234f584aaf7d17741490ff1, type: 3}
+  isUpsideDown: 0

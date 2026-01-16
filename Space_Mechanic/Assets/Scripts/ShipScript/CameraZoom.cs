@@ -21,6 +21,7 @@ public class CameraZoom : MonoBehaviour
     [SerializeField] private Vector3 cameraTargetPosition;
 
     [SerializeField] List<TurretGun> turrets = new List<TurretGun>();
+    [SerializeField] GameObject ship;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -87,17 +88,19 @@ public class CameraZoom : MonoBehaviour
                 //åker till den originela positionen
                 cam.transform.position += (new Vector3(0, 0, -10) - cam.transform.position) / 16;
 
-                //gör så att man röra sig igen och inte kunna använda turrets
-                PM.enabled = true;
-                foreach (TurretGun turret in turrets)
-                {
-                    turret.enabled = false;
-                }
 
                 //stannar när storleken stämmer med min zoom 
                 if (cam.orthographicSize < 5)
                 {
                     cam.orthographicSize = 5; // Min size
+
+                    //gör så att man röra sig igen och inte kunna använda turrets
+                    PM.enabled = true;
+                    foreach (TurretGun turret in turrets)
+                    {
+                        turret.enabled = false;
+                    }
+
                     isZoomedOut = false;
                 }
             }
@@ -107,6 +110,15 @@ public class CameraZoom : MonoBehaviour
         {
             timer = zoomTime;
             nextZoom = Time.time + zoomCoolDown;
+
+            if (isZoomedOut)
+            {
+                ship.GetComponent<Animator>().SetTrigger("FadeOut");
+            }
+            else if(!isZoomedOut)
+            {
+                ship.GetComponent<Animator>().SetTrigger("FadeIn");
+            }
         }
     }
 

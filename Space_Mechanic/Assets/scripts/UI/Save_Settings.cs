@@ -3,6 +3,8 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
+
 
 [Serializable]
 public class SettingsData
@@ -17,9 +19,12 @@ public class SettingsData
 
 public class Save_Settings : MonoBehaviour
 {
+    public static Save_Settings Instance;
+
+    [Header("UI Saving Display")]
     [SerializeField] TextMeshProUGUI saveText;
     private bool isSaving;
-    [SerializeField] float totalSavingTime;
+    [SerializeField] float totalSavingTime = 1f;
     private float savingtimer;
 
     [Header("Sliders + buttons")]
@@ -30,17 +35,31 @@ public class Save_Settings : MonoBehaviour
     [SerializeField] Slider fpsLimiter;
     [SerializeField] Toggle_VSync toggleVsync;
 
+    [Header("Audio Mixer")]
+    [SerializeField] private AudioMixer audioMixer;
+
     private string filePath;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
         filePath = Application.persistentDataPath + "/settings.json";
-
         isSaving = false;
-
         savingtimer = totalSavingTime;
 
-        LoadSettings();
+        LoadSettings();     // load JSON values
+        ApplySettings(); ;
     }
 
     void Update()
@@ -62,8 +81,8 @@ public class Save_Settings : MonoBehaviour
         {
             isSaving = true;
             savingtimer = totalSavingTime;
-
             SaveSettings();
+            ApplySettings(); // Apply right after saving
         }
     }
 
@@ -105,5 +124,23 @@ public class Save_Settings : MonoBehaviour
         {
             Debug.Log("No settings file found. Using defaults.");
         }
+    }
+
+    public void ApplySettings()
+    {
+        float Master = Mathf.Max(masterVolum.value / 100f, 0.001f);
+        float Music = Mathf.Max(musicVolum.value / 100f, 0.001f);
+        float Voice = Mathf.Max(voiceVolum.value / 100f, 0.001f);
+        float Background = Mathf.Max(backgroundVolum.value / 100f, 0.001f);
+
+        audioMixer.SetFloat("MasterVol", Mathf.Log10(Master) * 20f);
+        audioMixer.SetFloat("MusicVol", Mathf.Log10(Music) * 20f);
+        audioMixer.SetFloat("VoiceVol", Mathf.Log10(Voice) * 20f);
+        audioMixer.SetFloat("BackgroundVol", Mathf.Log10(Background) * 20f);
+
+        QualitySettings.vSyncCount = toggleVsync.isToggleOn ? 1 : 0;
+        Application.targetFrameRate = toggleVsync.isToggleOn ? -1 : (int)fpsLimiter.value;
+
+        Debug.Log("Settings Applied!");
     }
 }
