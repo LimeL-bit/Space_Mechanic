@@ -43,7 +43,7 @@ public class MachenLogic : MonoBehaviour
     void Update()
     {
         LogicForLooks();
-        logic();
+        Logic();
     }
 
     void LogicForLooks()
@@ -93,7 +93,7 @@ public class MachenLogic : MonoBehaviour
         }
     }
 
-    void logic()
+    void Logic()
     {
         if (!isBroken) return;
 

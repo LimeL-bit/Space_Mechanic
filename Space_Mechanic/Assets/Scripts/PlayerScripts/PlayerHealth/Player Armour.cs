@@ -1,9 +1,9 @@
 using UnityEngine;
+using System.Collections;
 
 public class ArmorPickup : MonoBehaviour
 {
     private bool isPickedUp = false;
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !isPickedUp)
@@ -15,7 +15,7 @@ public class ArmorPickup : MonoBehaviour
 
                 if (visual != null)
                 {
-                    visual.gameObject.SetActive(true);
+                    StartCoroutine(ShowArmorTemporarily(visual, 5f));
                 }
                 playerHealth.isArmored = true;
                 isPickedUp = true;
@@ -24,6 +24,13 @@ public class ArmorPickup : MonoBehaviour
             }
         }
     }
+    private IEnumerator ShowArmorTemporarily(Transform armorVisual, float duration)
+    {
+        armorVisual.gameObject.SetActive(true);  
+        yield return new WaitForSeconds(duration); 
+        armorVisual.gameObject.SetActive(false); 
+    }
 }
+
 
 
