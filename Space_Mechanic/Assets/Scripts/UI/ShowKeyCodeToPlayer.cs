@@ -8,7 +8,7 @@ public class ShowKeycodeToPlayer : MonoBehaviour
 
     [Header("Settings")]
     [TextArea(3, 10)]
-    [SerializeField] private string messageToShow = "Welcome to the area!";
+    [SerializeField] private string messageToShow = "Press E";
 
     void Start()
     {
