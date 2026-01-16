@@ -1,5 +1,7 @@
 using UnityEngine;
-using TMPro; // Needed for TextMeshPro
+using TMPro;
+using Unity.VectorGraphics; // Needed for TextMeshPro
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -50,7 +52,7 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         isDead = true;
-        Debug.Log("Player has died.");
+        SceneManager.LoadScene(6);
     }
     void UpdateHealthUI()
     {
