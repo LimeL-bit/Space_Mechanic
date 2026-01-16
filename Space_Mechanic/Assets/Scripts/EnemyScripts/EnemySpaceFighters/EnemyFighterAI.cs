@@ -198,7 +198,7 @@ public class EnemyFighterAI : MonoBehaviour
     private void Move()
     {
         float v = Vector2.SignedAngle(transform.up, direction);
-        angle = Vector2.SignedAngle(Vector2.up, direction);
+        angle = Vector2.SignedAngle(Vector2.left, direction);
         rb.angularVelocity = v * turnSpeed;
         rb.linearVelocity = transform.up * speed;
 

@@ -93,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
         {
             yDirection = climbSpeed;
             isClimbing = true;
+            animator.SetBool("IsClimbing", isClimbing);
         }
         if (Input.GetKeyUp(KeyCode.W))
         {
@@ -144,6 +145,7 @@ public class PlayerMovement : MonoBehaviour
         {
             canClimbLadder = false;
             isClimbing = false;
+            animator.SetBool("IsClimbing", isClimbing);
         }
     }
 }

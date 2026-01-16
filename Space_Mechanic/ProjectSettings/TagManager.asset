@@ -44,6 +44,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 427649249
+    locked: 0
   - name: Machines
     uniqueID: 2808552599
     locked: 0
@@ -61,6 +64,9 @@ TagManager:
     locked: 0
   - name: Ship
     uniqueID: 3954410943
+    locked: 0
+  - name: Enemies
+    uniqueID: 2824536447
     locked: 0
   m_RenderingLayers:
   - Default
