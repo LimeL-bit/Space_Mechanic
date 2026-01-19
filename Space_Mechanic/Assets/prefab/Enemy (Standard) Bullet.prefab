@@ -106,9 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a014466ef1356544a3fa5b0c7f665bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyProjectile
-  speed: 10
-  damage: 10
-  lifetime: 3
+  speed: 12
+  damage: 12
+  lifetime: 4
 --- !u!61 &2586836657188082501
 BoxCollider2D:
   m_ObjectHideFlags: 0
